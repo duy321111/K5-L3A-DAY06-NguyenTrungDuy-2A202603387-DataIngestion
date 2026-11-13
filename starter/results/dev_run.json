@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-11-13T15:52:37.617746+00:00",
+  "config": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "distance": "cosine",
+    "top_k": 3,
+    "strategies": {
+      "A": {
+        "chunking": "fixed_size",
+        "chunk_size": 500,
+        "overlap": 50,
+        "use_filter": false
+      },
+      "B": {
+        "chunking": "section",
+        "max_chunk_size": 1000,
+        "use_filter": false
+      },
+      "C": {
+        "chunks_from": "B",
+        "use_filter": true,
+        "filter_field": "chapter"
+      }
+    },
+    "selection_rule": "Choose highest dev Evidence Hit@3, then dev Hit@1, then fewer chunks, then alphabetical strategy."
+  },
+  "split": "dev",
+  "query_embedding_seconds": 0.13810459999876912,
+  "model_max_tokens": 256,
+  "api_cost_usd": 0,
+  "cost_note": "Local inference; electricity/hardware cost not measured.",
+  "input_sha256": {
+    "starter\\experiment_config.json": "a2dba8d9dfdff688517954f60df5d9c14ef51bae4951b873bd20ae11eb69c897",
+    "benchmark\\questions.json": "9e12fd570dbd1e22dd4f7a63dd9edf69a6986dbfc7752b239052b98a735d4c9b",
+    "starter\\search.py": "38e15e774a2cb6b762b4b1e11cbd42f66a84b36904aa0e43db2a7f1325f4f9ca",
+    "starter\\evaluate_dev.py": "0e504f26ff065fb05cd79f482bb308e33bb3eb5f5174b49159d4dbf3c5195a56",
+    "starter\\data\\pages.json": "af4ecf3bd94ddd534874ed77712cf60b913cbe74c0e5214753debcf03fb32634",
+    "starter\\data\\thinkpython2.pdf": "6033000bac3f9268ad75ee041bf8e5d9a3bc8a33bb156399cbd014918cb59f94",
+    "starter\\data\\chunks_A_embedded.json": "4dd861a71efb0661e421804e508b7954518bfc803846fc1e08ae6685dc0a5c1b",
+    "starter\\data\\chunks_B_embedded.json": "10103330013abecbb5e4205c11a3b693afa123961d9ae0d7d9da3e1c9db97295"
+  },
+  "metric_note": "Strict full-quote evidence match in one source/page chunk after NFC/whitespace normalization. No manual grounding/coherence labels inferred."
+}

@@ -1,0 +1,25 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dimensions": 384,
+  "distance": "cosine",
+  "top_k": 3,
+  "strategies": {
+    "A": {
+      "chunking": "fixed_size",
+      "chunk_size": 500,
+      "overlap": 50,
+      "use_filter": false
+    },
+    "B": {
+      "chunking": "section",
+      "max_chunk_size": 1000,
+      "use_filter": false
+    },
+    "C": {
+      "chunks_from": "B",
+      "use_filter": true,
+      "filter_field": "chapter"
+    }
+  },
+  "selection_rule": "Choose highest dev Evidence Hit@3, then dev Hit@1, then fewer chunks, then alphabetical strategy."
+}

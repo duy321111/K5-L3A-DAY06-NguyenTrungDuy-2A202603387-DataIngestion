@@ -1,0 +1,32 @@
+[
+  {
+    "strategy": "A",
+    "split": "dev",
+    "questions": 15,
+    "hit1_count": 3,
+    "hit3_count": 7,
+    "hit_at_1": 0.2,
+    "evidence_hit_at_3": 0.4666666666666667,
+    "chunk_count": 151
+  },
+  {
+    "strategy": "B",
+    "split": "dev",
+    "questions": 15,
+    "hit1_count": 3,
+    "hit3_count": 10,
+    "hit_at_1": 0.2,
+    "evidence_hit_at_3": 0.6666666666666666,
+    "chunk_count": 104
+  },
+  {
+    "strategy": "C",
+    "split": "dev",
+    "questions": 15,
+    "hit1_count": 3,
+    "hit3_count": 10,
+    "hit_at_1": 0.2,
+    "evidence_hit_at_3": 0.6666666666666666,
+    "chunk_count": 104
+  }
+]

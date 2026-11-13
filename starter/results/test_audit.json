@@ -1,0 +1,904 @@
+{
+  "status": "Scored",
+  "trace_sha256": "519d026d70d7eee92d614a30d65db7b02f3b7e91beccb7e9718ecf9e94857733",
+  "metadata_unit": "Each retrieved record; 15 records per strategy",
+  "filter_unit": "A question passes if all returned hits satisfy requested_filter; no filter is N/A",
+  "grounding_unit": "Joint evidence in top-3 for each question/strategy; 5 cases per strategy",
+  "samples": [
+    {
+      "sample_id": "A_Q16",
+      "strategy": "A",
+      "question_id": "Q16",
+      "question": "Does a nested list count as one element when measuring the length of the outer list?",
+      "expected_answer": "Yes. A nested list counts as a single element.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 113,
+          "quote": "Although a list can contain another list, the nested list still counts as a single element."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 113 nói rõ list lồng vẫn được tính là một phần tử. Có ví dụ nên đủ trả lời.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_p113_900",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 113,
+          "chapter": 10,
+          "text": "pens.')\nAlthough a list can contain another list, the nested list still counts as a single element. The\nlength of this list is four:\n['spam', 1, ['Brie','Roquefort','Pol le Veq'], [1, 2, 3]]\n10.4 List operations\nThe+operator concatenates lists:\n>>> a = [1, 2, 3]\n>>> b = [4, 5, 6]\n>>> c = a + b\n>>> c\n[1, 2, 3, 4, 5, 6]\nThe*operator repeats a list a given number of times:\n>>> [0] * 4\n[0, 0, 0, 0]\n>>> [1, 2, 3] * 3\n[1, 2, 3, 1, 2, 3, 1, 2, 3]\nThe first example repeats[0]four times. The second examp",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 113, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_p141_1350",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 141,
+          "chapter": 12,
+          "text": "eturn True\nreturn False\nIf you need to traverse the elements of a sequence and their indices, you can use the built-in\nfunctionenumerate:\nfor index, element in enumerate('abc'):\nprint(index, element)\nThe result fromenumerateis an enumerate object, which iterates a sequence of pairs; each\npair contains an index (starting from 0) and an element from the given sequence. In this\nexample, the output is\n0 a\n1 b\n2 c\nAgain.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 141, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_p143_1800",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": "eversed,\nwhich takes a sequence and returns an iterator that traverses the list in reverse order.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "A_Q17",
+      "strategy": "A",
+      "question_id": "Q17",
+      "question": "Can a function change the caller’s list when that list is passed as an argument?",
+      "expected_answer": "Yes. The function receives a reference to the list, and its modifications are visible to the caller.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 119,
+          "quote": "When you pass a list to a function, the function gets a reference to the list. If the function modifies the list, the caller sees the change."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 119 nói hàm nhận tham chiếu đến list. Ví dụ delete_head cho thấy list của người gọi bị thay đổi.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_p119_450",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 119,
+          "chapter": 10,
+          "text": " the same string or not.\n10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the l",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 119, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_p143_1350",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": " key, you have to use an immutable type\nlike a tuple or string.\n3. If you are passing a sequence as an argument to a function, using tuples reduces the\npotential for unexpected behavior due to aliasing.\nBecause tuples are immutable, they don’t provide methods likesortandreverse, which\nmodify existing lists. But Python provides the built-in functionsorted, which takes any\nsequence and returns a new list with the same elements in sorted order, andreversed,\nwhich takes a sequence and returns an ite",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_p120_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 120,
+          "chapter": 10,
+          "text": "98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the original list is unchanged.\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete the head of a list:\ndef bad_delete_head(t):\nt = t[1:] # WRONG!\nThe slice operator creates a new list and the assignment makestrefer to it, but ",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 120, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "A_Q18",
+      "strategy": "A",
+      "question_id": "Q18",
+      "question": "Does the in operator on a dictionary check values as well as keys?",
+      "expected_answer": "No. It checks keys; appearing as a value is not enough.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 126,
+          "quote": "Theinoperator works on dictionaries, too; it tells you whether something appears as akey in the dictionary (appearing as a value is not good enough)."
+        }
+      ],
+      "grounding_score": 0,
+      "grounding_reason": "Các đoạn tìm được nói về key, value và hash. Không đoạn nào giải thích toán tử in kiểm tra key hay value nên chưa trả lời được.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_p130_1350",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 130,
+          "chapter": 11,
+          "text": " a function that takes a value (of any kind) and returns an integer. Dictionaries\nuse these integers, called hash values, to store and look up key-value pairs.\nThis system works fine if the keys are immutable. But if the keys are mutable, like lists,\nbad things happen. For example, when you create a key-value pair, Python hashes the key\nand stores it in the corresponding location. If you modify the key and then hash it again, it\nwould go to a different location. In that case you might have two e",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 130, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_p125_450",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 125,
+          "chapter": 11,
+          "text": "a collection of\nvalues. Each key is associated with a single value. The association of a key and a value is\ncalled akey-value pairor sometimes anitem.\nIn mathematical language, a dictionary represents amappingfrom keys to values, so you\ncan also say that each key “maps to” a value. As an example, we’ll build a dictionary that\nmaps from English to Spanish words, so the keys and the values are all strings.\nThe functiondictcreates a new dictionary with no items. Becausedictis the name of a\nbuilt-in",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 125, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_p125_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 125,
+          "chapter": 11,
+          "text": "Chapter 11\nDictionaries\nThis chapter presents another built-in type called a dictionary. Dictionaries are one of\nPython’s best features; they are the building blocks of many efficient and elegant algo-\nrithms.\n11.1 A dictionary is a mapping\nAdictionaryis like a list, but more general. In a list, the indices have to be integers; in a\ndictionary they can be (almost) any type.\nA dictionary contains a collection of indices, which are calledkeys, and a collection of\nvalues. Each key is associated wit",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 125, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "A_Q19",
+      "strategy": "A",
+      "question_id": "Q19",
+      "question": "In Chapter 12 (Tuples), what is the important difference between tuples and lists?",
+      "expected_answer": "Tuples are immutable, whereas lists are mutable.",
+      "requested_filter": {
+        "chapter": 12
+      },
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 137,
+          "quote": "A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so in that respect tuples are a lot like lists. The important difference is that tuples are immutable."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 137 so sánh tuple với list và nêu khác biệt là tuple không thay đổi được. Đủ thông tin cho ý chính của câu hỏi.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_p137_450",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "ple”.\n12.1 T uples are immutable\nA tuple is a sequence of values. The values can be any type, and they are indexed by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>> t ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>> t = ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_p137_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "Chapter 12\nT uples\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together. I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note: there is no consensus on how to pronounce “tuple”. Some people say “tuh-\nple”, which rhymes with “supple”. But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n12.1 T uples are immutable\nA tuple is a sequ",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_p144_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 144,
+          "chapter": 12,
+          "text": "122 Chapter 12. T uples\n12.8 Debugging\nLists, dictionaries and tuples are examples ofdata structures; in this chapter we are starting\nto see compound data structures, like lists of tuples, or dictionaries that contain tuples as\nkeys and lists as values. Compound data structures are useful, but they are prone to what\nI callshape errors; that is, errors caused when a data structure has the wrong type, size, or\nstructure. For example, if you are expecting a list with one integer and I give you a pl",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 144, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        }
+      ]
+    },
+    {
+      "sample_id": "A_Q20",
+      "strategy": "A",
+      "question_id": "Q20",
+      "question": "How can a tuple of values be passed to a function as multiple arguments?",
+      "expected_answer": "Use the * operator to unpack, or scatter, the tuple.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 140,
+          "quote": "If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the*operator."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 140 nói dùng dấu * để truyền các phần tử thành nhiều đối số. Có ví dụ divmod(*t) nên đủ trả lời.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_p140_450",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 140,
+          "chapter": 12,
+          "text": "tter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator. For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>> t = (7, 3)\n>>> divmod(t)\nTypeError: divmod expected 2 arguments, got 1\nBut if you scatter the tuple, it works:\n>>> divmod(*t)\n(2, 1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>> max(1, 2, 3)\n3\nButsumdoes not.\n",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 140, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_p140_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 140,
+          "chapter": 12,
+          "text": "118 Chapter 12. T uples\n12.4 Variable-length argument tuples\nFunctions can take a variable number of arguments. A parameter name that begins with\n*gathersarguments into a tuple. For example,printalltakes any number of arguments\nand prints them:\ndef printall(*args):\nprint(args)\nThe gather parameter can have any name you like, butargsis conventional. Here’s how\nthe function works:\n>>> printall(1, 2.0,'3')\n(1, 2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you wan",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 140, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_p137_900",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "single element, you have to include a final comma:\n>>> t1 ='a',\n>>> type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>> t2 = ('a')\n>>> type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple. With no argument, it creates\nan empty tuple:\n>>> t = tuple()\n>>> t\n()",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "B_Q16",
+      "strategy": "B",
+      "question_id": "Q16",
+      "question": "Does a nested list count as one element when measuring the length of the outer list?",
+      "expected_answer": "Yes. A nested list counts as a single element.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 113,
+          "quote": "Although a list can contain another list, the nested list still counts as a single element."
+        }
+      ],
+      "grounding_score": 0,
+      "grounding_reason": "Kết quả nói về slice, zip và phép toán trên list. Không có đoạn giải thích list lồng được tính là một phần tử, dù hai đoạn nằm đúng trang 113.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p113_3_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 113,
+          "chapter": 10,
+          "text": "10.5 List slices\nThe slice operator also works on lists:",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 113, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p141_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 141,
+          "chapter": 12,
+          "text": "12.5. Lists and tuples 119\n>>> for pair in zip(s, t):\n... print(pair)\n...\n('a', 0)\n('b', 1)\n('c', 2)\nA zip object is a kind ofiterator, which is any object that iterates through a sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\nIf you want to use list operators and methods, you can use a zip object to make a list:\n>>> list(zip(s, t))\n[('a', 0), ('b', 1), ('c', 2)]\nThe result is a list of tuples; in this example, each tuple contains a character from the string\nand the corresponding element from the list.\nIf the sequences are not the same length, the result has the length of the shorter one.\n>>> list(zip('Anne','Elk'))\n[('A','E'), ('n','l'), ('n','k')]\nYou can use tuple assignment in aforloop to traverse a list of tuples:\nt = [('a', 0), ('b', 1), ('c', 2)]\nfor letter, number in t:\nprint(number, letter)\nEach time through the loop, Python selects the next tuple in the list and assigns the ele-\nments tole",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 141, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p113_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 113,
+          "chapter": 10,
+          "text": "10.4 List operations\nThe+operator concatenates lists:\n>>> a = [1, 2, 3]\n>>> b = [4, 5, 6]\n>>> c = a + b\n>>> c\n[1, 2, 3, 4, 5, 6]\nThe*operator repeats a list a given number of times:\n>>> [0] * 4\n[0, 0, 0, 0]\n>>> [1, 2, 3] * 3\n[1, 2, 3, 1, 2, 3, 1, 2, 3]\nThe first example repeats[0]four times. The second example repeats the list[1, 2, 3]\nthree times.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 113, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "B_Q17",
+      "strategy": "B",
+      "question_id": "Q17",
+      "question": "Can a function change the caller’s list when that list is passed as an argument?",
+      "expected_answer": "Yes. The function receives a reference to the list, and its modifications are visible to the caller.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 119,
+          "quote": "When you pass a list to a function, the function gets a reference to the list. If the function modifies the list, the caller sees the change."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 119 giải thích list được truyền bằng tham chiếu và có ví dụ sửa list. Đủ trả lời câu hỏi.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p119_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 119,
+          "chapter": 10,
+          "text": "10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the list is shared by two frames, I drew it between them.\nIt is important to distinguish between operations that modify lists and operations that cre-\nate new lists. For example, theappendmethod modifies a list, but the+operator creates a\nnew list.\nHere’s an example usingappend:\n>>> t1 = [1, 2]\n>>> t2 = t1.append(3)\n>>> t1\n[1, 2, 3]\n>>> t2\nNone",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 119, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p120_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 120,
+          "chapter": 10,
+          "text": "98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the original list is unchanged.\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete the head of a list:\ndef bad_delete_head(t):\nt = t[1:] # WRONG!\nThe slice operator creates a new list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n>>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]\nAt the beginning ofbad_delete_head,tandt4refer to the same list. At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef tail(t):\nreturn t[1:]\nThis function leaves the original list unmodified. Here’s how it is used:\n>>> letters = ['a','",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 120, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p143_1_1000",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": "as a dictionary key, you have to use an immutable type\nlike a tuple or string.\n3. If you are passing a sequence as an argument to a function, using tuples reduces the\npotential for unexpected behavior due to aliasing.\nBecause tuples are immutable, they don’t provide methods likesortandreverse, which\nmodify existing lists. But Python provides the built-in functionsorted, which takes any\nsequence and returns a new list with the same elements in sorted order, andreversed,\nwhich takes a sequence and returns an iterator that traverses the list in reverse order.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "B_Q18",
+      "strategy": "B",
+      "question_id": "Q18",
+      "question": "Does the in operator on a dictionary check values as well as keys?",
+      "expected_answer": "No. It checks keys; appearing as a value is not enough.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 126,
+          "quote": "Theinoperator works on dictionaries, too; it tells you whether something appears as akey in the dictionary (appearing as a value is not good enough)."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn thứ ba ở trang 126 nói rõ in kiểm tra key, chỉ xuất hiện ở value thì chưa đủ. Hai đoạn đầu không trả lời trực tiếp nhưng top-3 vẫn có đủ bằng chứng.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p130_0_1000",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 130,
+          "chapter": 11,
+          "text": "ample shows, but they cannot be keys. Here’s\nwhat happens if you try:\n>>> t = [1, 2, 3]\n>>> d = dict()\n>>> d[t] ='oops'\nTraceback (most recent call last):\nFile \"<stdin>\", line 1, in ?\nTypeError: list objects are unhashable\nI mentioned earlier that a dictionary is implemented using a hashtable and that means that\nthe keys have to behashable.\nAhashis a function that takes a value (of any kind) and returns an integer. Dictionaries\nuse these integers, called hash values, to store and look up key-value pairs.\nThis system works fine if the keys are immutable. But if the keys are mutable, like lists,\nbad things happen. For example, when you create a key-value pair, Python hashes the key\nand stores it in the corresponding location. If you modify the key and then hash it again, it\nwould go to a different location. In that case you might have two entries for the same key,\nor you might not be able to find a key. Either way, the dictionary wouldn’t work correctly.\nThat’s why keys have to be hashab",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 130, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p125_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 125,
+          "chapter": 11,
+          "text": "11.1 A dictionary is a mapping\nAdictionaryis like a list, but more general. In a list, the indices have to be integers; in a\ndictionary they can be (almost) any type.\nA dictionary contains a collection of indices, which are calledkeys, and a collection of\nvalues. Each key is associated with a single value. The association of a key and a value is\ncalled akey-value pairor sometimes anitem.\nIn mathematical language, a dictionary represents amappingfrom keys to values, so you\ncan also say that each key “maps to” a value. As an example, we’ll build a dictionary that\nmaps from English to Spanish words, so the keys and the values are all strings.\nThe functiondictcreates a new dictionary with no items. Becausedictis the name of a\nbuilt-in function, you should avoid using it as a variable name.\n>>> eng2sp = dict()\n>>> eng2sp\n{}\nThe squiggly-brackets,{}, represent an empty dictionary. To add items to the dictionary,\nyou can use square brackets:\n>>> eng2sp['one'] ='uno'\nThis line creates an item",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 125, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p126_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 126,
+          "chapter": 11,
+          "text": "104 Chapter 11. Dictionaries\n>>> eng2sp = {'one':'uno','two':'dos','three':'tres'}\nBut if you printeng2sp, you might be surprised:\n>>> eng2sp\n{'one':'uno','three':'tres','two':'dos'}\nThe order of the key-value pairs might not be the same. If you type the same example\non your computer, you might get a different result. In general, the order of items in a\ndictionary is unpredictable.\nBut that’s not a problem because the elements of a dictionary are never indexed with inte-\nger indices. Instead, you use the keys to look up the corresponding values:\n>>> eng2sp['two']\n'dos'\nThe key'two'always maps to the value'dos'so the order of the items doesn’t matter.\nIf the key isn’t in the dictionary, you get an exception:\n>>> eng2sp['four']\nKeyError:'four'\nThelenfunction works on dictionaries; it returns the number of key-value pairs:\n>>> len(eng2sp)\n3\nTheinoperator works on dictionaries, too; it tells you whether something appears as akey\nin the dictionary (appearing as a value is not good enough).",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 126, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "B_Q19",
+      "strategy": "B",
+      "question_id": "Q19",
+      "question": "In Chapter 12 (Tuples), what is the important difference between tuples and lists?",
+      "expected_answer": "Tuples are immutable, whereas lists are mutable.",
+      "requested_filter": {
+        "chapter": 12
+      },
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 137,
+          "quote": "A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so in that respect tuples are a lot like lists. The important difference is that tuples are immutable."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Trang 137 nói tuple không thay đổi được. Đoạn ở trang 143 còn nói list có thể thay đổi, nên top-3 đủ để so sánh.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p137_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "12.1 T uples are immutable\nA tuple is a sequence of values. The values can be any type, and they are indexed by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>> t ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>> t = ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>> t1 ='a',\n>>> type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>> t2 = ('a')\n>>> type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple. With no argument, it creates\nan empty tuple:\n>>> t = tuple()\n>>> t\n()",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p144_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 144,
+          "chapter": 12,
+          "text": "12.9 Glossary\ntuple:An immutable sequence of elements.\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\nables on the left. The right side is evaluated and then its elements are assigned to the\nvariables on the left.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 144, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p143_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": "12.7 Sequences of sequences\nI have focused on lists of tuples, but almost all of the examples in this chapter also work\nwith lists of lists, tuples of tuples, and tuples of lists. To avoid enumerating the possible\ncombinations, it is sometimes easier to talk about sequences of sequences.\nIn many contexts, the different kinds of sequences (strings, lists and tuples) can be used\ninterchangeably. So how should you choose one over the others?\nTo start with the obvious, strings are more limited than other sequences because the ele-\nments have to be characters. They are also immutable. If you need the ability to change the\ncharacters in a string (as opposed to creating a new string), you might want to use a list of\ncharacters instead.\nLists are more common than tuples, mostly because they are mutable. But there are a few\ncases where you might prefer tuples:\n1. In some contexts, like areturnstatement, it is syntactically simpler to create a tuple\nthan a list.\n2. If you want to use a sequence",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        }
+      ]
+    },
+    {
+      "sample_id": "B_Q20",
+      "strategy": "B",
+      "question_id": "Q20",
+      "question": "How can a tuple of values be passed to a function as multiple arguments?",
+      "expected_answer": "Use the * operator to unpack, or scatter, the tuple.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 140,
+          "quote": "If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the*operator."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 140 giải thích cách dùng dấu * và có ví dụ divmod(*t). Đủ bằng chứng để trả lời.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p140_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 140,
+          "chapter": 12,
+          "text": "12.4 Variable-length argument tuples\nFunctions can take a variable number of arguments. A parameter name that begins with\n*gathersarguments into a tuple. For example,printalltakes any number of arguments\nand prints them:\ndef printall(*args):\nprint(args)\nThe gather parameter can have any name you like, butargsis conventional. Here’s how\nthe function works:\n>>> printall(1, 2.0,'3')\n(1, 2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator. For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>> t = (7, 3)\n>>> divmod(t)\nTypeError: divmod expected 2 arguments, got 1\nBut if you scatter the tuple, it works:\n>>> divmod(*t)\n(2, 1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>> max(1, 2, 3)\n3\nButsumdoes not.\n>>> sum(1, 2, 3)\nTypeError: sum expected at most 2 arguments, got 3\nAs an",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 140, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p137_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "12.1 T uples are immutable\nA tuple is a sequence of values. The values can be any type, and they are indexed by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>> t ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>> t = ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>> t1 ='a',\n>>> type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>> t2 = ('a')\n>>> type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple. With no argument, it creates\nan empty tuple:\n>>> t = tuple()\n>>> t\n()",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p144_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 144,
+          "chapter": 12,
+          "text": "12.9 Glossary\ntuple:An immutable sequence of elements.\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\nables on the left. The right side is evaluated and then its elements are assigned to the\nvariables on the left.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 144, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "C_Q16",
+      "strategy": "C",
+      "question_id": "Q16",
+      "question": "Does a nested list count as one element when measuring the length of the outer list?",
+      "expected_answer": "Yes. A nested list counts as a single element.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 113,
+          "quote": "Although a list can contain another list, the nested list still counts as a single element."
+        }
+      ],
+      "grounding_score": 0,
+      "grounding_reason": "Kết quả nói về slice, zip và phép toán trên list. Không có đoạn giải thích list lồng được tính là một phần tử, dù hai đoạn nằm đúng trang 113. Kết quả C ở câu này giống B.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p113_3_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 113,
+          "chapter": 10,
+          "text": "10.5 List slices\nThe slice operator also works on lists:",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 113, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p141_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 141,
+          "chapter": 12,
+          "text": "12.5. Lists and tuples 119\n>>> for pair in zip(s, t):\n... print(pair)\n...\n('a', 0)\n('b', 1)\n('c', 2)\nA zip object is a kind ofiterator, which is any object that iterates through a sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\nIf you want to use list operators and methods, you can use a zip object to make a list:\n>>> list(zip(s, t))\n[('a', 0), ('b', 1), ('c', 2)]\nThe result is a list of tuples; in this example, each tuple contains a character from the string\nand the corresponding element from the list.\nIf the sequences are not the same length, the result has the length of the shorter one.\n>>> list(zip('Anne','Elk'))\n[('A','E'), ('n','l'), ('n','k')]\nYou can use tuple assignment in aforloop to traverse a list of tuples:\nt = [('a', 0), ('b', 1), ('c', 2)]\nfor letter, number in t:\nprint(number, letter)\nEach time through the loop, Python selects the next tuple in the list and assigns the ele-\nments tole",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 141, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p113_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 113,
+          "chapter": 10,
+          "text": "10.4 List operations\nThe+operator concatenates lists:\n>>> a = [1, 2, 3]\n>>> b = [4, 5, 6]\n>>> c = a + b\n>>> c\n[1, 2, 3, 4, 5, 6]\nThe*operator repeats a list a given number of times:\n>>> [0] * 4\n[0, 0, 0, 0]\n>>> [1, 2, 3] * 3\n[1, 2, 3, 1, 2, 3, 1, 2, 3]\nThe first example repeats[0]four times. The second example repeats the list[1, 2, 3]\nthree times.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 113, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "C_Q17",
+      "strategy": "C",
+      "question_id": "Q17",
+      "question": "Can a function change the caller’s list when that list is passed as an argument?",
+      "expected_answer": "Yes. The function receives a reference to the list, and its modifications are visible to the caller.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 119,
+          "quote": "When you pass a list to a function, the function gets a reference to the list. If the function modifies the list, the caller sees the change."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 119 giải thích list được truyền bằng tham chiếu và có ví dụ sửa list. Đủ trả lời câu hỏi. Kết quả C ở câu này giống B.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p119_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 119,
+          "chapter": 10,
+          "text": "10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the list is shared by two frames, I drew it between them.\nIt is important to distinguish between operations that modify lists and operations that cre-\nate new lists. For example, theappendmethod modifies a list, but the+operator creates a\nnew list.\nHere’s an example usingappend:\n>>> t1 = [1, 2]\n>>> t2 = t1.append(3)\n>>> t1\n[1, 2, 3]\n>>> t2\nNone",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 119, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p120_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 120,
+          "chapter": 10,
+          "text": "98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the original list is unchanged.\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete the head of a list:\ndef bad_delete_head(t):\nt = t[1:] # WRONG!\nThe slice operator creates a new list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n>>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]\nAt the beginning ofbad_delete_head,tandt4refer to the same list. At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef tail(t):\nreturn t[1:]\nThis function leaves the original list unmodified. Here’s how it is used:\n>>> letters = ['a','",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 120, chương 10, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p143_1_1000",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": "as a dictionary key, you have to use an immutable type\nlike a tuple or string.\n3. If you are passing a sequence as an argument to a function, using tuples reduces the\npotential for unexpected behavior due to aliasing.\nBecause tuples are immutable, they don’t provide methods likesortandreverse, which\nmodify existing lists. But Python provides the built-in functionsorted, which takes any\nsequence and returns a new list with the same elements in sorted order, andreversed,\nwhich takes a sequence and returns an iterator that traverses the list in reverse order.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "C_Q18",
+      "strategy": "C",
+      "question_id": "Q18",
+      "question": "Does the in operator on a dictionary check values as well as keys?",
+      "expected_answer": "No. It checks keys; appearing as a value is not enough.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 126,
+          "quote": "Theinoperator works on dictionaries, too; it tells you whether something appears as akey in the dictionary (appearing as a value is not good enough)."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn thứ ba ở trang 126 nói rõ in kiểm tra key, chỉ xuất hiện ở value thì chưa đủ. Hai đoạn đầu không trả lời trực tiếp nhưng top-3 vẫn có đủ bằng chứng. Kết quả C ở câu này giống B.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p130_0_1000",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 130,
+          "chapter": 11,
+          "text": "ample shows, but they cannot be keys. Here’s\nwhat happens if you try:\n>>> t = [1, 2, 3]\n>>> d = dict()\n>>> d[t] ='oops'\nTraceback (most recent call last):\nFile \"<stdin>\", line 1, in ?\nTypeError: list objects are unhashable\nI mentioned earlier that a dictionary is implemented using a hashtable and that means that\nthe keys have to behashable.\nAhashis a function that takes a value (of any kind) and returns an integer. Dictionaries\nuse these integers, called hash values, to store and look up key-value pairs.\nThis system works fine if the keys are immutable. But if the keys are mutable, like lists,\nbad things happen. For example, when you create a key-value pair, Python hashes the key\nand stores it in the corresponding location. If you modify the key and then hash it again, it\nwould go to a different location. In that case you might have two entries for the same key,\nor you might not be able to find a key. Either way, the dictionary wouldn’t work correctly.\nThat’s why keys have to be hashab",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 130, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p125_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 125,
+          "chapter": 11,
+          "text": "11.1 A dictionary is a mapping\nAdictionaryis like a list, but more general. In a list, the indices have to be integers; in a\ndictionary they can be (almost) any type.\nA dictionary contains a collection of indices, which are calledkeys, and a collection of\nvalues. Each key is associated with a single value. The association of a key and a value is\ncalled akey-value pairor sometimes anitem.\nIn mathematical language, a dictionary represents amappingfrom keys to values, so you\ncan also say that each key “maps to” a value. As an example, we’ll build a dictionary that\nmaps from English to Spanish words, so the keys and the values are all strings.\nThe functiondictcreates a new dictionary with no items. Becausedictis the name of a\nbuilt-in function, you should avoid using it as a variable name.\n>>> eng2sp = dict()\n>>> eng2sp\n{}\nThe squiggly-brackets,{}, represent an empty dictionary. To add items to the dictionary,\nyou can use square brackets:\n>>> eng2sp['one'] ='uno'\nThis line creates an item",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 125, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p126_0_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 126,
+          "chapter": 11,
+          "text": "104 Chapter 11. Dictionaries\n>>> eng2sp = {'one':'uno','two':'dos','three':'tres'}\nBut if you printeng2sp, you might be surprised:\n>>> eng2sp\n{'one':'uno','three':'tres','two':'dos'}\nThe order of the key-value pairs might not be the same. If you type the same example\non your computer, you might get a different result. In general, the order of items in a\ndictionary is unpredictable.\nBut that’s not a problem because the elements of a dictionary are never indexed with inte-\nger indices. Instead, you use the keys to look up the corresponding values:\n>>> eng2sp['two']\n'dos'\nThe key'two'always maps to the value'dos'so the order of the items doesn’t matter.\nIf the key isn’t in the dictionary, you get an exception:\n>>> eng2sp['four']\nKeyError:'four'\nThelenfunction works on dictionaries; it returns the number of key-value pairs:\n>>> len(eng2sp)\n3\nTheinoperator works on dictionaries, too; it tells you whether something appears as akey\nin the dictionary (appearing as a value is not good enough).",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 126, chương 11, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    },
+    {
+      "sample_id": "C_Q19",
+      "strategy": "C",
+      "question_id": "Q19",
+      "question": "In Chapter 12 (Tuples), what is the important difference between tuples and lists?",
+      "expected_answer": "Tuples are immutable, whereas lists are mutable.",
+      "requested_filter": {
+        "chapter": 12
+      },
+      "applied_filter": {
+        "chapter": 12
+      },
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 137,
+          "quote": "A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so in that respect tuples are a lot like lists. The important difference is that tuples are immutable."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Trang 137 nói tuple không thay đổi được. Đoạn ở trang 143 còn nói list có thể thay đổi, nên top-3 đủ để so sánh. Kết quả C ở câu này giống B.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p137_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "12.1 T uples are immutable\nA tuple is a sequence of values. The values can be any type, and they are indexed by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>> t ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>> t = ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>> t1 ='a',\n>>> type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>> t2 = ('a')\n>>> type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple. With no argument, it creates\nan empty tuple:\n>>> t = tuple()\n>>> t\n()",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p144_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 144,
+          "chapter": 12,
+          "text": "12.9 Glossary\ntuple:An immutable sequence of elements.\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\nables on the left. The right side is evaluated and then its elements are assigned to the\nvariables on the left.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 144, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p143_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 143,
+          "chapter": 12,
+          "text": "12.7 Sequences of sequences\nI have focused on lists of tuples, but almost all of the examples in this chapter also work\nwith lists of lists, tuples of tuples, and tuples of lists. To avoid enumerating the possible\ncombinations, it is sometimes easier to talk about sequences of sequences.\nIn many contexts, the different kinds of sequences (strings, lists and tuples) can be used\ninterchangeably. So how should you choose one over the others?\nTo start with the obvious, strings are more limited than other sequences because the ele-\nments have to be characters. They are also immutable. If you need the ability to change the\ncharacters in a string (as opposed to creating a new string), you might want to use a list of\ncharacters instead.\nLists are more common than tuples, mostly because they are mutable. But there are a few\ncases where you might prefer tuples:\n1. In some contexts, like areturnstatement, it is syntactically simpler to create a tuple\nthan a list.\n2. If you want to use a sequence",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 143, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": true,
+          "filter_reason": "Kết quả thuộc chương 12, khớp chương 12 được yêu cầu."
+        }
+      ]
+    },
+    {
+      "sample_id": "C_Q20",
+      "strategy": "C",
+      "question_id": "Q20",
+      "question": "How can a tuple of values be passed to a function as multiple arguments?",
+      "expected_answer": "Use the * operator to unpack, or scatter, the tuple.",
+      "requested_filter": {},
+      "applied_filter": {},
+      "gold_evidence": [
+        {
+          "source_id": "thinkpython2",
+          "page": 140,
+          "quote": "If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the*operator."
+        }
+      ],
+      "grounding_score": 2,
+      "grounding_reason": "Đoạn đầu ở trang 140 giải thích cách dùng dấu * và có ví dụ divmod(*t). Đủ bằng chứng để trả lời. Kết quả C ở câu này giống B.",
+      "metadata_audit": [
+        {
+          "rank": 1,
+          "chunk_id": "thinkpython2_B_p140_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 140,
+          "chapter": 12,
+          "text": "12.4 Variable-length argument tuples\nFunctions can take a variable number of arguments. A parameter name that begins with\n*gathersarguments into a tuple. For example,printalltakes any number of arguments\nand prints them:\ndef printall(*args):\nprint(args)\nThe gather parameter can have any name you like, butargsis conventional. Here’s how\nthe function works:\n>>> printall(1, 2.0,'3')\n(1, 2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator. For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>> t = (7, 3)\n>>> divmod(t)\nTypeError: divmod expected 2 arguments, got 1\nBut if you scatter the tuple, it works:\n>>> divmod(*t)\n(2, 1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>> max(1, 2, 3)\n3\nButsumdoes not.\n>>> sum(1, 2, 3)\nTypeError: sum expected at most 2 arguments, got 3\nAs an",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 140, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "thinkpython2_B_p137_1_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 137,
+          "chapter": 12,
+          "text": "12.1 T uples are immutable\nA tuple is a sequence of values. The values can be any type, and they are indexed by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>> t ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>> t = ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>> t1 ='a',\n>>> type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>> t2 = ('a')\n>>> type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple. With no argument, it creates\nan empty tuple:\n>>> t = tuple()\n>>> t\n()",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 137, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "thinkpython2_B_p144_2_0",
+          "document_id": "thinkpython2",
+          "source": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+          "page": 144,
+          "chapter": 12,
+          "text": "12.9 Glossary\ntuple:An immutable sequence of elements.\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\nables on the left. The right side is evaluated and then its elements are assigned to the\nvariables on the left.",
+          "metadata_correct": true,
+          "metadata_reason": "Đã đối chiếu PDF: nội dung nằm ở trang 144, chương 12, đúng nguồn Think Python.",
+          "filter_compliant": null,
+          "filter_reason": "Câu hỏi không yêu cầu lọc, nên không chấm mục này."
+        }
+      ]
+    }
+  ],
+  "assessment_method": "Read retrieved evidence and compared it with source text; source/page/chapter also checked directly against the local PDF.",
+  "assessed_at": "2026-11-13T16:26:31.595772+00:00"
+}

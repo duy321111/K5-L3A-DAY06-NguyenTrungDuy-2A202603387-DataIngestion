@@ -1,0 +1,210 @@
+[
+  {
+    "id": "Q01",
+    "split": "dev",
+    "question": "Do all elements in a Python list have to be the same type?",
+    "expected_answer": "No. Elements in a list can have different types.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 111,
+    "evidence_quote": "The elements of a list don’t have to be the same type.",
+    "filter": {}
+  },
+  {
+    "id": "Q02",
+    "split": "dev",
+    "question": "What does a negative index mean when accessing a list?",
+    "expected_answer": "It counts backward from the end of the list.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 112,
+    "evidence_quote": "If an index has a negative value, it counts backward from the end of the list.",
+    "filter": {}
+  },
+  {
+    "id": "Q03",
+    "split": "dev",
+    "question": "In Chapter 10 (Lists), what happens if both indices are omitted from a list slice?",
+    "expected_answer": "The slice is a copy of the whole list.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 114,
+    "evidence_quote": "If you omit the first index, the slice starts at the beginning. If you omit the second, the slice goes to the end. So if you omit both, the slice is a copy of the whole list.",
+    "filter": {
+      "chapter": 10
+    }
+  },
+  {
+    "id": "Q04",
+    "split": "dev",
+    "question": "What do most list methods return after modifying the list?",
+    "expected_answer": "They return None.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 114,
+    "evidence_quote": "Most list methods are void; they modify the list and returnNone.",
+    "filter": {}
+  },
+  {
+    "id": "Q05",
+    "split": "dev",
+    "question": "What does list.pop() do when no index is supplied?",
+    "expected_answer": "It deletes and returns the last element.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 116,
+    "evidence_quote": "popmodifies the list and returns the element that was removed. If you don’t provide an index, it deletes and returns the last element.",
+    "filter": {}
+  },
+  {
+    "id": "Q06",
+    "split": "dev",
+    "question": "Which operator checks whether two variables refer to the same object?",
+    "expected_answer": "The is operator.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 117,
+    "evidence_quote": "To check whether two variables refer to the same object, you can use theisoperator.",
+    "filter": {}
+  },
+  {
+    "id": "Q07",
+    "split": "dev",
+    "question": "How many values is each key associated with in a dictionary?",
+    "expected_answer": "Each key is associated with a single value.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 125,
+    "evidence_quote": "Each key is associated with a single value.",
+    "filter": {}
+  },
+  {
+    "id": "Q08",
+    "split": "dev",
+    "question": "How does dictionary.get behave when a requested key is missing?",
+    "expected_answer": "It returns the supplied default value.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 127,
+    "evidence_quote": "Dictionaries have a method calledgetthat takes a key and a default value. If the key appears in the dictionary,getreturns the corresponding value; otherwise it returns the default value.",
+    "filter": {}
+  },
+  {
+    "id": "Q09",
+    "split": "dev",
+    "question": "In Chapter 11 (Dictionaries), what does a for loop traverse when given a dictionary?",
+    "expected_answer": "It traverses the keys of the dictionary.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 128,
+    "evidence_quote": "If you use a dictionary in aforstatement, it traverses the keys of the dictionary.",
+    "filter": {
+      "chapter": 11
+    }
+  },
+  {
+    "id": "Q10",
+    "split": "dev",
+    "question": "Can a list be used as a dictionary value or as a dictionary key?",
+    "expected_answer": "Lists can be dictionary values, but cannot be dictionary keys.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 130,
+    "evidence_quote": "Lists can be values in a dictionary, as this example shows, but they cannot be keys.",
+    "filter": {}
+  },
+  {
+    "id": "Q11",
+    "split": "dev",
+    "question": "What is a previously computed value stored for later use called?",
+    "expected_answer": "It is called a memo.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 131,
+    "evidence_quote": "A previously computed value that is stored for later use is called amemo.",
+    "filter": {}
+  },
+  {
+    "id": "Q12",
+    "split": "dev",
+    "question": "How do you create a tuple with exactly one element?",
+    "expected_answer": "Include a final comma, for example t = (1,).",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 137,
+    "evidence_quote": "To create a tuple with a single element, you have to include a final comma:",
+    "filter": {}
+  },
+  {
+    "id": "Q13",
+    "split": "dev",
+    "question": "What does divmod return for two integer arguments?",
+    "expected_answer": "A tuple containing the quotient and remainder.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 139,
+    "evidence_quote": "The built-in functiondivmodtakes two arguments and returns a tuple of two values, the quotient and remainder.",
+    "filter": {}
+  },
+  {
+    "id": "Q14",
+    "split": "dev",
+    "question": "In Chapter 12 (Tuples), what happens when zip receives sequences of different lengths?",
+    "expected_answer": "The result has the length of the shorter sequence.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 141,
+    "evidence_quote": "If the sequences are not the same length, the result has the length of the shorter one.",
+    "filter": {
+      "chapter": 12
+    }
+  },
+  {
+    "id": "Q15",
+    "split": "dev",
+    "question": "Why do tuples lack sort and reverse methods that modify their contents?",
+    "expected_answer": "Tuples are immutable, so they do not provide these methods that modify existing lists.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 143,
+    "evidence_quote": "Because tuples are immutable, they don’t provide methods likesortandreverse, which modify existing lists.",
+    "filter": {}
+  },
+  {
+    "id": "Q16",
+    "split": "test",
+    "question": "Does a nested list count as one element when measuring the length of the outer list?",
+    "expected_answer": "Yes. A nested list counts as a single element.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 113,
+    "evidence_quote": "Although a list can contain another list, the nested list still counts as a single element.",
+    "filter": {}
+  },
+  {
+    "id": "Q17",
+    "split": "test",
+    "question": "Can a function change the caller’s list when that list is passed as an argument?",
+    "expected_answer": "Yes. The function receives a reference to the list, and its modifications are visible to the caller.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 119,
+    "evidence_quote": "When you pass a list to a function, the function gets a reference to the list. If the function modifies the list, the caller sees the change.",
+    "filter": {}
+  },
+  {
+    "id": "Q18",
+    "split": "test",
+    "question": "Does the in operator on a dictionary check values as well as keys?",
+    "expected_answer": "No. It checks keys; appearing as a value is not enough.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 126,
+    "evidence_quote": "Theinoperator works on dictionaries, too; it tells you whether something appears as akey in the dictionary (appearing as a value is not good enough).",
+    "filter": {}
+  },
+  {
+    "id": "Q19",
+    "split": "test",
+    "question": "In Chapter 12 (Tuples), what is the important difference between tuples and lists?",
+    "expected_answer": "Tuples are immutable, whereas lists are mutable.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 137,
+    "evidence_quote": "A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so in that respect tuples are a lot like lists. The important difference is that tuples are immutable.",
+    "filter": {
+      "chapter": 12
+    }
+  },
+  {
+    "id": "Q20",
+    "split": "test",
+    "question": "How can a tuple of values be passed to a function as multiple arguments?",
+    "expected_answer": "Use the * operator to unpack, or scatter, the tuple.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 140,
+    "evidence_quote": "If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the*operator.",
+    "filter": {}
+  }
+]

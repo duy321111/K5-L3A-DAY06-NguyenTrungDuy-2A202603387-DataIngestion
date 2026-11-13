@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-11-13T15:55:02.980251+00:00",
+  "split": "test",
+  "chosen_strategy_from_dev": "B",
+  "selection_sha256": "c4362aebbeb6875a2fe20b1040b67319ed7bb981272d1f0b88ec1d22c59fbe2f",
+  "query_embedding_seconds": 0.1172735999989527,
+  "config": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "distance": "cosine",
+    "top_k": 3,
+    "strategies": {
+      "A": {
+        "chunking": "fixed_size",
+        "chunk_size": 500,
+        "overlap": 50,
+        "use_filter": false
+      },
+      "B": {
+        "chunking": "section",
+        "max_chunk_size": 1000,
+        "use_filter": false
+      },
+      "C": {
+        "chunks_from": "B",
+        "use_filter": true,
+        "filter_field": "chapter"
+      }
+    },
+    "selection_rule": "Choose highest dev Evidence Hit@3, then dev Hit@1, then fewer chunks, then alphabetical strategy."
+  },
+  "api_cost_usd": 0,
+  "cost_note": "Local inference; electricity/hardware cost not measured.",
+  "resolved_model_revision": null,
+  "note": "Strict quote proxy; human coherence/metadata/grounding audit still required."
+}

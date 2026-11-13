@@ -1,0 +1,59 @@
+{
+  "assessment_method": "Read retrieved evidence and compared it with source text; source/page/chapter also checked directly against the local PDF.",
+  "strategies": [
+    {
+      "strategy": "A",
+      "test_cases": 5,
+      "grounding_mean_out_of_2": 1.6,
+      "grounding_distribution": {
+        "0": 1,
+        "1": 0,
+        "2": 4
+      },
+      "metadata_correct_count": 15,
+      "metadata_checked_count": 15,
+      "filter_compliant_questions": 1,
+      "filter_questions": 1,
+      "filter_compliance_rate": 1.0,
+      "filter_actually_applied": false
+    },
+    {
+      "strategy": "B",
+      "test_cases": 5,
+      "grounding_mean_out_of_2": 1.6,
+      "grounding_distribution": {
+        "0": 1,
+        "1": 0,
+        "2": 4
+      },
+      "metadata_correct_count": 15,
+      "metadata_checked_count": 15,
+      "filter_compliant_questions": 1,
+      "filter_questions": 1,
+      "filter_compliance_rate": 1.0,
+      "filter_actually_applied": false
+    },
+    {
+      "strategy": "C",
+      "test_cases": 5,
+      "grounding_mean_out_of_2": 1.6,
+      "grounding_distribution": {
+        "0": 1,
+        "1": 0,
+        "2": 4
+      },
+      "metadata_correct_count": 15,
+      "metadata_checked_count": 15,
+      "filter_compliant_questions": 1,
+      "filter_questions": 1,
+      "filter_compliance_rate": 1.0,
+      "filter_actually_applied": true
+    }
+  ],
+  "limitations": [
+    "Chỉ có 5 câu test và 1 câu yêu cầu filter; chưa thể kết luận tổng quát.",
+    "A/B không áp dụng filter. Việc top-3 của A/B đúng chương ở Q19 không chứng minh có cơ chế lọc.",
+    "Metadata đúng chỉ cho biết nguồn/trang/chương đúng, không có nghĩa nội dung trả lời đúng câu hỏi.",
+    "Nguồn sách cũ có mô tả thứ tự dictionary không còn đúng với các phiên bản Python mới; đánh giá Q18 chỉ dùng bằng chứng về toán tử in."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "strategies": [
+    {
+      "strategy": "A",
+      "samples": 10,
+      "score_sum": 10,
+      "mean_out_of_2": 1.0,
+      "distribution": {
+        "0": 0,
+        "1": 10,
+        "2": 0
+      }
+    },
+    {
+      "strategy": "B",
+      "samples": 10,
+      "score_sum": 15,
+      "mean_out_of_2": 1.5,
+      "distribution": {
+        "0": 0,
+        "1": 5,
+        "2": 5
+      }
+    },
+    {
+      "strategy": "C",
+      "samples": 10,
+      "score_sum": 15,
+      "mean_out_of_2": 1.5,
+      "distribution": {
+        "0": 0,
+        "1": 5,
+        "2": 5
+      }
+    }
+  ]
+}

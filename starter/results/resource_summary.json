@@ -1,0 +1,138 @@
+{
+  "measured_at": "2026-11-13T16:47:27.762067+00:00",
+  "versions_recorded_now": {
+    "python": "3.12.10",
+    "pypdf": "7.0.1",
+    "fonttools": "4.68.0",
+    "sentence-transformers": "6.3.0",
+    "torch": "2.15.0",
+    "pg8000": "1.31.6"
+  },
+  "retrieval_times": [
+    {
+      "split": "dev",
+      "strategy": "A",
+      "queries": 15,
+      "total_seconds": 1.4936949000039021,
+      "mean_milliseconds": 99.57966000026013
+    },
+    {
+      "split": "dev",
+      "strategy": "B",
+      "queries": 15,
+      "total_seconds": 1.5364002000023902,
+      "mean_milliseconds": 102.42668000015935
+    },
+    {
+      "split": "dev",
+      "strategy": "C",
+      "queries": 15,
+      "total_seconds": 1.396170500000153,
+      "mean_milliseconds": 93.07803333334354
+    },
+    {
+      "split": "test",
+      "strategy": "A",
+      "queries": 5,
+      "total_seconds": 0.6574608999981137,
+      "mean_milliseconds": 131.49217999962275
+    },
+    {
+      "split": "test",
+      "strategy": "B",
+      "queries": 5,
+      "total_seconds": 0.5110693000005995,
+      "mean_milliseconds": 102.2138600001199
+    },
+    {
+      "split": "test",
+      "strategy": "C",
+      "queries": 5,
+      "total_seconds": 0.45982509999885224,
+      "mean_milliseconds": 91.96501999977045
+    }
+  ],
+  "chunks": [
+    {
+      "strategy": "A",
+      "count": 151,
+      "characters": 66570,
+      "min_length": 70,
+      "mean_length": 440.86092715231786,
+      "max_length": 500,
+      "embedded_json_bytes": 1784441
+    },
+    {
+      "strategy": "B",
+      "count": 104,
+      "characters": 60774,
+      "min_length": 20,
+      "mean_length": 584.3653846153846,
+      "max_length": 1000,
+      "embedded_json_bytes": 1244667
+    }
+  ],
+  "unmeasured": [
+    "PDF extraction wall time",
+    "document embedding wall time",
+    "database ingestion wall time",
+    "peak RAM",
+    "electricity and hardware cost"
+  ],
+  "timing_scope": "search_seconds includes per-query PostgreSQL connection, count and vector SELECT; excludes query embedding and model loading. One sequential A/B/C run; cache/order may affect timings.",
+  "database_version_recorded_now": "PostgreSQL 16.16 (Debian 16.16-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "pgvector_version": "0.8.7",
+  "vector_index": [
+    [
+      "CREATE UNIQUE INDEX chunks_pkey ON public.chunks USING btree (strategy, chunk_id)"
+    ]
+  ],
+  "token_check_after_evaluation": [
+    {
+      "strategy": "A",
+      "max_document_tokens": 255,
+      "total_document_tokens": 19292,
+      "model_max_tokens": 256,
+      "chunks_exceeding_model_limit": []
+    },
+    {
+      "strategy": "B",
+      "max_document_tokens": 384,
+      "total_document_tokens": 17533,
+      "model_max_tokens": 256,
+      "chunks_exceeding_model_limit": [
+        "thinkpython2_B_p111_1_0",
+        "thinkpython2_B_p114_0_0",
+        "thinkpython2_B_p114_1_0",
+        "thinkpython2_B_p115_1_0",
+        "thinkpython2_B_p116_1_0",
+        "thinkpython2_B_p117_0_0",
+        "thinkpython2_B_p118_0_0",
+        "thinkpython2_B_p120_0_0",
+        "thinkpython2_B_p121_0_0",
+        "thinkpython2_B_p123_0_0",
+        "thinkpython2_B_p123_0_2000",
+        "thinkpython2_B_p126_0_0",
+        "thinkpython2_B_p127_0_1000",
+        "thinkpython2_B_p129_0_0",
+        "thinkpython2_B_p130_0_0",
+        "thinkpython2_B_p130_0_1000",
+        "thinkpython2_B_p131_1_0",
+        "thinkpython2_B_p135_1_0",
+        "thinkpython2_B_p135_1_1000",
+        "thinkpython2_B_p135_1_2000",
+        "thinkpython2_B_p137_1_0",
+        "thinkpython2_B_p138_0_0",
+        "thinkpython2_B_p139_1_0",
+        "thinkpython2_B_p140_1_0",
+        "thinkpython2_B_p141_0_0",
+        "thinkpython2_B_p142_1_0",
+        "thinkpython2_B_p144_1_0",
+        "thinkpython2_B_p144_1_1000",
+        "thinkpython2_B_p145_1_0",
+        "thinkpython2_B_p146_0_0"
+      ]
+    }
+  ],
+  "token_check_note": "Lengths inspected after test without changing stored embeddings. Existing model.encode uses truncation at model.max_seq_length."
+}

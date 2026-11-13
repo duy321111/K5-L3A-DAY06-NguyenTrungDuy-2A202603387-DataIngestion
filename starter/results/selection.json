@@ -1,0 +1,53 @@
+{
+  "frozen_at": "2026-11-13T15:54:37.729507+00:00",
+  "chosen_strategy": "B",
+  "selection_rule": "Choose highest dev Evidence Hit@3, then dev Hit@1, then fewer chunks, then alphabetical strategy.",
+  "basis": "Dev results only; no test retrieval executed before this file was written.",
+  "dev_metrics": [
+    {
+      "strategy": "A",
+      "split": "dev",
+      "questions": 15,
+      "hit1_count": 3,
+      "hit3_count": 7,
+      "hit_at_1": 0.2,
+      "evidence_hit_at_3": 0.4666666666666667,
+      "chunk_count": 151
+    },
+    {
+      "strategy": "B",
+      "split": "dev",
+      "questions": 15,
+      "hit1_count": 3,
+      "hit3_count": 10,
+      "hit_at_1": 0.2,
+      "evidence_hit_at_3": 0.6666666666666666,
+      "chunk_count": 104
+    },
+    {
+      "strategy": "C",
+      "split": "dev",
+      "questions": 15,
+      "hit1_count": 3,
+      "hit3_count": 10,
+      "hit_at_1": 0.2,
+      "evidence_hit_at_3": 0.6666666666666666,
+      "chunk_count": 104
+    }
+  ],
+  "frozen_sha256": {
+    "starter\\experiment_config.json": "a2dba8d9dfdff688517954f60df5d9c14ef51bae4951b873bd20ae11eb69c897",
+    "benchmark\\questions.json": "9e12fd570dbd1e22dd4f7a63dd9edf69a6986dbfc7752b239052b98a735d4c9b",
+    "starter\\search.py": "38e15e774a2cb6b762b4b1e11cbd42f66a84b36904aa0e43db2a7f1325f4f9ca",
+    "starter\\evaluate_dev.py": "0e504f26ff065fb05cd79f482bb308e33bb3eb5f5174b49159d4dbf3c5195a56",
+    "starter\\data\\pages.json": "af4ecf3bd94ddd534874ed77712cf60b913cbe74c0e5214753debcf03fb32634",
+    "starter\\data\\thinkpython2.pdf": "6033000bac3f9268ad75ee041bf8e5d9a3bc8a33bb156399cbd014918cb59f94",
+    "starter\\data\\chunks_A_embedded.json": "4dd861a71efb0661e421804e508b7954518bfc803846fc1e08ae6685dc0a5c1b",
+    "starter\\data\\chunks_B_embedded.json": "10103330013abecbb5e4205c11a3b693afa123961d9ae0d7d9da3e1c9db97295",
+    "starter/results/dev_run.json": "088ae3b16a2453545c1eb28fc46a8f86396d88b53ce29c9ddf3fcbf942e90822",
+    "starter/results/dev_metrics.json": "4dc46c1f2a6f9e91ac8a8ae8ed98ecaf92e825bd30d4c04d9a21e230974e2333",
+    "starter/results/dev_traces.json": "c1a7f28799e20115606293439b454349d530367e05d2835d43599d506d3e7680",
+    "starter/evaluate_test.py": "f11734634ef18261eb0a45f5ace74805d2cd010f987b4ec5cf4fb8a423a26c98"
+  },
+  "note": "Same-book dev/test topics overlap; small illustrative holdout, not broad generalization."
+}
