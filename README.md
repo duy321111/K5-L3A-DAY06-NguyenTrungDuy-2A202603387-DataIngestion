@@ -178,5 +178,3 @@ Chuẩn bị chunk không vượt giới hạn token cho một thí nghiệm sau
 ## File nào là phần triển khai thực tế?
 
 Các script ngay dưới `starter/` là pipeline đang sử dụng. Thư mục `starter/src/` và `starter/scripts/check_setup.py` là khung/tham khảo từ đề bài; pipeline hiện tại dùng `check_database.py` và pg8000. Không chạy `python -m src.run` để thay cho các lệnh trong README này.
-
-Thông tin học viên: [STUDENT.md](STUDENT.md). Các yêu cầu đề bài vẫn ở [GUIDE.md](GUIDE.md), [BENCHMARK.md](BENCHMARK.md), [RUBRIC.md](RUBRIC.md), [RULES.md](RULES.md) và [SUBMISSION.md](SUBMISSION.md).
