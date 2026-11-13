@@ -13,8 +13,7 @@
       "chunk_start": 450,
       "chunk_text": "the simplest is to enclose the elements in square\nbrackets ([and]):\n[10, 20, 30, 40]\n['crunchy frog','ram bladder','lark vomit']\nThe first example is a list of four integers. The second is a list of three strings. The elements\nof a list don’t have to be the same type. The following list contains a string, a float, an\ninteger, and (lo!) another list:\n['spam', 2.0, 5, [10, 20]]\nA list within another list isnested.\nA list that contains no elements is called an empty list; you can create one with em",
       "score": 1,
-      "reason": "Giữ được ví dụ và ý chính về list, nhưng mở đầu thiếu vế dẫn, kết thúc cắt giữa từ empty (with em).",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ được ví dụ và ý chính về list, nhưng mở đầu thiếu vế dẫn, kết thúc cắt giữa từ empty (with em)."
     },
     {
       "sample_id": "B_p111",
@@ -28,8 +27,7 @@
       "chunk_start": 203,
       "chunk_text": "10.1 A list is a sequence\nLike a string, alistis a sequence of values. In a string, the values are characters; in a list,\nthey can be any type. The values in a list are calledelementsor sometimesitems.\nThere are several ways to create a new list; the simplest is to enclose the elements in square\nbrackets ([and]):\n[10, 20, 30, 40]\n['crunchy frog','ram bladder','lark vomit']\nThe first example is a list of four integers. The second is a list of three strings. The elements\nof a list don’t have to be the same type. The following list contains a string, a float, an\ninteger, and (lo!) another list:\n['spam', 2.0, 5, [10, 20]]\nA list within another list isnested.\nA list that contains no elements is called an empty list; you can create one with empty\nbrackets,[].\nAs you might expect, you can assign list values to variables:\n>>> cheeses = ['Cheddar','Edam','Gouda']\n>>> numbers = [42, 123]\n>>> empty = []\n>>> print(cheeses, numbers, empty)\n['Cheddar','Edam','Gouda'] [42, 123] []",
       "score": 2,
-      "reason": "Có tiêu đề 10.1, định nghĩa list, ví dụ kiểu dữ liệu và list lồng, list rỗng cùng kết quả in đầy đủ. Nội dung đoạn tự hiểu được; còn lỗi dính chữ từ PDF nhưng không làm mất ý chính.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề 10.1, định nghĩa list, ví dụ kiểu dữ liệu và list lồng, list rỗng cùng kết quả in đầy đủ. Nội dung đoạn tự hiểu được; còn lỗi dính chữ từ PDF nhưng không làm mất ý chính."
     },
     {
       "sample_id": "C_p111",
@@ -43,8 +41,7 @@
       "chunk_start": 203,
       "chunk_text": "10.1 A list is a sequence\nLike a string, alistis a sequence of values. In a string, the values are characters; in a list,\nthey can be any type. The values in a list are calledelementsor sometimesitems.\nThere are several ways to create a new list; the simplest is to enclose the elements in square\nbrackets ([and]):\n[10, 20, 30, 40]\n['crunchy frog','ram bladder','lark vomit']\nThe first example is a list of four integers. The second is a list of three strings. The elements\nof a list don’t have to be the same type. The following list contains a string, a float, an\ninteger, and (lo!) another list:\n['spam', 2.0, 5, [10, 20]]\nA list within another list isnested.\nA list that contains no elements is called an empty list; you can create one with empty\nbrackets,[].\nAs you might expect, you can assign list values to variables:\n>>> cheeses = ['Cheddar','Edam','Gouda']\n>>> numbers = [42, 123]\n>>> empty = []\n>>> print(cheeses, numbers, empty)\n['Cheddar','Edam','Gouda'] [42, 123] []",
       "score": 2,
-      "reason": "Có tiêu đề 10.1, định nghĩa list, ví dụ kiểu dữ liệu và list lồng, list rỗng cùng kết quả in đầy đủ. Nội dung đoạn tự hiểu được; còn lỗi dính chữ từ PDF nhưng không làm mất ý chính. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề 10.1, định nghĩa list, ví dụ kiểu dữ liệu và list lồng, list rỗng cùng kết quả in đầy đủ. Nội dung đoạn tự hiểu được; còn lỗi dính chữ từ PDF nhưng không làm mất ý chính. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p112",
@@ -58,8 +55,7 @@
       "chunk_start": 450,
       "chunk_text": "operator appears on the left side of an\nassignment, it identifies the element of the list that will be assigned.\n>>> numbers = [42, 123]\n>>> numbers[1] = 5\n>>> numbers\n[42, 5]\nThe one-eth element ofnumbers, which used to be 123, is now 5.\nFigure 10.1 shows the state diagram forcheeses,numbersandempty.\nLists are represented by boxes with the word “list” outside and the elements of the list\ninside.cheesesrefers to a list with three elements indexed 0, 1 and 2.numberscontains\ntwo elements; the diag",
       "score": 1,
-      "reason": "Mở đầu operator appears thiếu phần xác định bracket operator. Ví dụ gán phần tử vẫn hiểu được, nhưng phần mô tả sơ đồ cuối đoạn bị cắt ở the diag và không có hình đi kèm.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Mở đầu operator appears thiếu phần xác định bracket operator. Ví dụ gán phần tử vẫn hiểu được, nhưng phần mô tả sơ đồ cuối đoạn bị cắt ở the diag và không có hình đi kèm."
     },
     {
       "sample_id": "B_p112",
@@ -73,8 +69,7 @@
       "chunk_start": 130,
       "chunk_text": "10.2 Lists are mutable\nThe syntax for accessing the elements of a list is the same as for accessing the characters\nof a string—the bracket operator. The expression inside the brackets specifies the index.\nRemember that the indices start at 0:\n>>> cheeses[0]\n'Cheddar'\nUnlike strings, lists are mutable. When the bracket operator appears on the left side of an\nassignment, it identifies the element of the list that will be assigned.\n>>> numbers = [42, 123]\n>>> numbers[1] = 5\n>>> numbers\n[42, 5]\nThe one-eth element ofnumbers, which used to be 123, is now 5.\nFigure 10.1 shows the state diagram forcheeses,numbersandempty.\nLists are represented by boxes with the word “list” outside and the elements of the list\ninside.cheesesrefers to a list with three elements indexed 0, 1 and 2.numberscontains\ntwo elements; the diagram shows that the value of the second element has been reassigned\nfrom 123 to 5.emptyrefers to a list with no elements.\nList indices work the same way as string indices:\n• Any int",
       "score": 1,
-      "reason": "Có tiêu đề, giải thích chỉ số và tính mutable cùng ví dụ hoàn chỉnh. Tuy nhiên mục quy tắc chỉ số bắt đầu ở cuối bị cắt giữa Any int, nên toàn đoạn chưa trọn ý.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề, giải thích chỉ số và tính mutable cùng ví dụ hoàn chỉnh. Tuy nhiên mục quy tắc chỉ số bắt đầu ở cuối bị cắt giữa Any int, nên toàn đoạn chưa trọn ý."
     },
     {
       "sample_id": "C_p112",
@@ -88,8 +83,7 @@
       "chunk_start": 130,
       "chunk_text": "10.2 Lists are mutable\nThe syntax for accessing the elements of a list is the same as for accessing the characters\nof a string—the bracket operator. The expression inside the brackets specifies the index.\nRemember that the indices start at 0:\n>>> cheeses[0]\n'Cheddar'\nUnlike strings, lists are mutable. When the bracket operator appears on the left side of an\nassignment, it identifies the element of the list that will be assigned.\n>>> numbers = [42, 123]\n>>> numbers[1] = 5\n>>> numbers\n[42, 5]\nThe one-eth element ofnumbers, which used to be 123, is now 5.\nFigure 10.1 shows the state diagram forcheeses,numbersandempty.\nLists are represented by boxes with the word “list” outside and the elements of the list\ninside.cheesesrefers to a list with three elements indexed 0, 1 and 2.numberscontains\ntwo elements; the diagram shows that the value of the second element has been reassigned\nfrom 123 to 5.emptyrefers to a list with no elements.\nList indices work the same way as string indices:\n• Any int",
       "score": 1,
-      "reason": "Có tiêu đề, giải thích chỉ số và tính mutable cùng ví dụ hoàn chỉnh. Tuy nhiên mục quy tắc chỉ số bắt đầu ở cuối bị cắt giữa Any int, nên toàn đoạn chưa trọn ý. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề, giải thích chỉ số và tính mutable cùng ví dụ hoàn chỉnh. Tuy nhiên mục quy tắc chỉ số bắt đầu ở cuối bị cắt giữa Any int, nên toàn đoạn chưa trọn ý. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p113",
@@ -103,8 +97,7 @@
       "chunk_start": 450,
       "chunk_text": " = numbers[i] * 2\nThis loop traverses the list and updates each element.lenreturns the number of elements\nin the list.rangereturns a list of indices from 0 ton−1, wherenis the length of the list.\nEach time through the loopigets the index of the next element. The assignment statement\nin the body usesito read the old value of the element and to assign the new value.\nAforloop over an empty list never runs the body:\nfor x in []:\nprint('This never happens.')\nAlthough a list can contain another list, ",
       "score": 1,
-      "reason": "Bắt đầu giữa phép gán, thiếu vòng lặp gốc mà This loop đang giải thích. Vẫn hiểu phần vòng lặp trên list rỗng, nhưng câu cuối về list lồng chưa hoàn thành.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu giữa phép gán, thiếu vòng lặp gốc mà This loop đang giải thích. Vẫn hiểu phần vòng lặp trên list rỗng, nhưng câu cuối về list lồng chưa hoàn thành."
     },
     {
       "sample_id": "B_p113",
@@ -118,8 +111,7 @@
       "chunk_start": 27,
       "chunk_text": "10.3 Traversing a list\nThe most common way to traverse the elements of a list is with aforloop. The syntax is\nthe same as for strings:\nfor cheese in cheeses:\nprint(cheese)\nThis works well if you only need to read the elements of the list. But if you want to write\nor update the elements, you need the indices. A common way to do that is to combine the\nbuilt-in functionsrangeandlen:\nfor i in range(len(numbers)):\nnumbers[i] = numbers[i] * 2\nThis loop traverses the list and updates each element.lenreturns the number of elements\nin the list.rangereturns a list of indices from 0 ton−1, wherenis the length of the list.\nEach time through the loopigets the index of the next element. The assignment statement\nin the body usesito read the old value of the element and to assign the new value.\nAforloop over an empty list never runs the body:\nfor x in []:\nprint('This never happens.')\nAlthough a list can contain another list, the nested list still counts as a single element. The\nlength of this list is",
       "score": 1,
-      "reason": "Giữ tiêu đề và ví dụ duyệt/cập nhật list trước phần giải thích nên ngữ cảnh tốt hơn A. Cuối đoạn dừng ở The length of this list is, thiếu số lượng và ví dụ tiếp theo.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ tiêu đề và ví dụ duyệt/cập nhật list trước phần giải thích nên ngữ cảnh tốt hơn A. Cuối đoạn dừng ở The length of this list is, thiếu số lượng và ví dụ tiếp theo."
     },
     {
       "sample_id": "C_p113",
@@ -133,8 +125,7 @@
       "chunk_start": 27,
       "chunk_text": "10.3 Traversing a list\nThe most common way to traverse the elements of a list is with aforloop. The syntax is\nthe same as for strings:\nfor cheese in cheeses:\nprint(cheese)\nThis works well if you only need to read the elements of the list. But if you want to write\nor update the elements, you need the indices. A common way to do that is to combine the\nbuilt-in functionsrangeandlen:\nfor i in range(len(numbers)):\nnumbers[i] = numbers[i] * 2\nThis loop traverses the list and updates each element.lenreturns the number of elements\nin the list.rangereturns a list of indices from 0 ton−1, wherenis the length of the list.\nEach time through the loopigets the index of the next element. The assignment statement\nin the body usesito read the old value of the element and to assign the new value.\nAforloop over an empty list never runs the body:\nfor x in []:\nprint('This never happens.')\nAlthough a list can contain another list, the nested list still counts as a single element. The\nlength of this list is",
       "score": 1,
-      "reason": "Giữ tiêu đề và ví dụ duyệt/cập nhật list trước phần giải thích nên ngữ cảnh tốt hơn A. Cuối đoạn dừng ở The length of this list is, thiếu số lượng và ví dụ tiếp theo. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ tiêu đề và ví dụ duyệt/cập nhật list trước phần giải thích nên ngữ cảnh tốt hơn A. Cuối đoạn dừng ở The length of this list is, thiếu số lượng và ví dụ tiếp theo. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p114",
@@ -148,8 +139,7 @@
       "chunk_start": 450,
       "chunk_text": "ce operator on the left side of an assignment can update multiple elements:\n>>> t = ['a','b','c','d','e','f']\n>>> t[1:3] = ['x','y']\n>>> t\n['a','x','y','d','e','f']\n10.6 List methods\nPython provides methods that operate on lists. For example,appendadds a new element\nto the end of a list:\n>>> t = ['a','b','c']\n>>> t.append('d')\n>>> t\n['a','b','c','d']\nextendtakes a list as an argument and appends all of the elements:\n>>> t1 = ['a','b','c']\n>>> t2 = ['d','e']\n>>> t1.extend(t2)\n>>> t1\n['a','b','c',",
       "score": 1,
-      "reason": "Bắt đầu giữa từ slice ở ce operator và trộn phần gán slice với mục List methods. Ví dụ append hoàn chỉnh nhưng đầu ra ví dụ extend bị cắt giữa danh sách.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu giữa từ slice ở ce operator và trộn phần gán slice với mục List methods. Ví dụ append hoàn chỉnh nhưng đầu ra ví dụ extend bị cắt giữa danh sách."
     },
     {
       "sample_id": "B_p114",
@@ -163,8 +153,7 @@
       "chunk_start": 615,
       "chunk_text": "10.6 List methods\nPython provides methods that operate on lists. For example,appendadds a new element\nto the end of a list:\n>>> t = ['a','b','c']\n>>> t.append('d')\n>>> t\n['a','b','c','d']\nextendtakes a list as an argument and appends all of the elements:\n>>> t1 = ['a','b','c']\n>>> t2 = ['d','e']\n>>> t1.extend(t2)\n>>> t1\n['a','b','c','d','e']\nThis example leavest2unmodified.\nsortarranges the elements of the list from low to high:\n>>> t = ['d','c','e','b','a']\n>>> t.sort()\n>>> t\n['a','b','c','d','e']\nMost list methods are void; they modify the list and returnNone. If you accidentally write\nt = t.sort(), you will be disappointed with the result.",
       "score": 2,
-      "reason": "Bắt đầu đúng tiêu đề List methods, giữ các ví dụ append, extend, sort với kết quả và cảnh báo trả về None. Có thể đọc riêng để hiểu nội dung mục.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu đúng tiêu đề List methods, giữ các ví dụ append, extend, sort với kết quả và cảnh báo trả về None. Có thể đọc riêng để hiểu nội dung mục."
     },
     {
       "sample_id": "C_p114",
@@ -178,8 +167,7 @@
       "chunk_start": 615,
       "chunk_text": "10.6 List methods\nPython provides methods that operate on lists. For example,appendadds a new element\nto the end of a list:\n>>> t = ['a','b','c']\n>>> t.append('d')\n>>> t\n['a','b','c','d']\nextendtakes a list as an argument and appends all of the elements:\n>>> t1 = ['a','b','c']\n>>> t2 = ['d','e']\n>>> t1.extend(t2)\n>>> t1\n['a','b','c','d','e']\nThis example leavest2unmodified.\nsortarranges the elements of the list from low to high:\n>>> t = ['d','c','e','b','a']\n>>> t.sort()\n>>> t\n['a','b','c','d','e']\nMost list methods are void; they modify the list and returnNone. If you accidentally write\nt = t.sort(), you will be disappointed with the result.",
       "score": 2,
-      "reason": "Bắt đầu đúng tiêu đề List methods, giữ các ví dụ append, extend, sort với kết quả và cảnh báo trả về None. Có thể đọc riêng để hiểu nội dung mục. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu đúng tiêu đề List methods, giữ các ví dụ append, extend, sort với kết quả và cảnh báo trả về None. Có thể đọc riêng để hiểu nội dung mục. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p115",
@@ -193,8 +181,7 @@
       "chunk_start": 450,
       "chunk_text": "e sum of the elements; a variable used this way is\nsometimes called anaccumulator.\nAdding up the elements of a list is such a common operation that Python provides it as a\nbuilt-in function,sum:\n>>> t = [1, 2, 3]\n>>> sum(t)\n6\nAn operation like this that combines a sequence of elements into a single value is some-\ntimes calledreduce.\nSometimes you want to traverse one list while building another. For example, the following\nfunction takes a list of strings and returns a new list that contains capi",
       "score": 1,
-      "reason": "Mở đầu giữa câu nói về accumulator và kết thúc giữa từ capitalized. Có giải thích sum/reduce ở giữa, nhưng thiếu khởi tạo accumulator và ví dụ map tiếp theo.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Mở đầu giữa câu nói về accumulator và kết thúc giữa từ capitalized. Có giải thích sum/reduce ở giữa, nhưng thiếu khởi tạo accumulator và ví dụ map tiếp theo."
     },
     {
       "sample_id": "B_p115",
@@ -208,8 +195,7 @@
       "chunk_start": 32,
       "chunk_text": "10.7 Map, filter and reduce\nTo add up all the numbers in a list, you can use a loop like this:\ndef add_all(t):\ntotal = 0\nfor x in t:\ntotal += x\nreturn total\ntotalis initialized to 0. Each time through the loop,xgets one element from the list.\nThe+=operator provides a short way to update a variable. Thisaugmented assignment\nstatement,\ntotal += x\nis equivalent to\ntotal = total + x\nAs the loop runs,totalaccumulates the sum of the elements; a variable used this way is\nsometimes called anaccumulator.\nAdding up the elements of a list is such a common operation that Python provides it as a\nbuilt-in function,sum:\n>>> t = [1, 2, 3]\n>>> sum(t)\n6\nAn operation like this that combines a sequence of elements into a single value is some-\ntimes calledreduce.\nSometimes you want to traverse one list while building another. For example, the following\nfunction takes a list of strings and returns a new list that contains capitalized strings:\ndef capitalize_all(t):\nres = []\nfor s in t:\nres.append(s.capitali",
       "score": 1,
-      "reason": "Có tiêu đề, hàm add_all, augmented assignment và giải thích accumulator/reduce. Phần capitalize_all bị cắt giữa lời gọi capitalize, nên thiếu phần kết của ví dụ code.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề, hàm add_all, augmented assignment và giải thích accumulator/reduce. Phần capitalize_all bị cắt giữa lời gọi capitalize, nên thiếu phần kết của ví dụ code."
     },
     {
       "sample_id": "C_p115",
@@ -223,8 +209,7 @@
       "chunk_start": 32,
       "chunk_text": "10.7 Map, filter and reduce\nTo add up all the numbers in a list, you can use a loop like this:\ndef add_all(t):\ntotal = 0\nfor x in t:\ntotal += x\nreturn total\ntotalis initialized to 0. Each time through the loop,xgets one element from the list.\nThe+=operator provides a short way to update a variable. Thisaugmented assignment\nstatement,\ntotal += x\nis equivalent to\ntotal = total + x\nAs the loop runs,totalaccumulates the sum of the elements; a variable used this way is\nsometimes called anaccumulator.\nAdding up the elements of a list is such a common operation that Python provides it as a\nbuilt-in function,sum:\n>>> t = [1, 2, 3]\n>>> sum(t)\n6\nAn operation like this that combines a sequence of elements into a single value is some-\ntimes calledreduce.\nSometimes you want to traverse one list while building another. For example, the following\nfunction takes a list of strings and returns a new list that contains capitalized strings:\ndef capitalize_all(t):\nres = []\nfor s in t:\nres.append(s.capitali",
       "score": 1,
-      "reason": "Có tiêu đề, hàm add_all, augmented assignment và giải thích accumulator/reduce. Phần capitalize_all bị cắt giữa lời gọi capitalize, nên thiếu phần kết của ví dụ code. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Có tiêu đề, hàm add_all, augmented assignment và giải thích accumulator/reduce. Phần capitalize_all bị cắt giữa lời gọi capitalize, nên thiếu phần kết của ví dụ code. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p116",
@@ -238,8 +223,7 @@
       "chunk_start": 450,
       "chunk_text": "p:\n>>> t = ['a','b','c']\n>>> x = t.pop(1)\n>>> t\n['a','c']\n>>> x\n'b'\npopmodifies the list and returns the element that was removed. If you don’t provide an\nindex, it deletes and returns the last element.\nIf you don’t need the removed value, you can use thedeloperator:\n>>> t = ['a','b','c']\n>>> del t[1]\n>>> t\n['a','c']\nIf you know the element you want to remove (but not the index), you can useremove:\n>>> t = ['a','b','c']\n>>> t.remove('b')\n>>> t\n['a','c']\nThe return value fromremoveisNone.\nTo remo",
       "score": 1,
-      "reason": "Mở đầu chỉ còn p: của phần dẫn về pop. Ví dụ pop, del và remove cùng giải thích chính vẫn đọc được, nhưng câu cuối To remo bị cắt trước nội dung xóa nhiều phần tử.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Mở đầu chỉ còn p: của phần dẫn về pop. Ví dụ pop, del và remove cùng giải thích chính vẫn đọc được, nhưng câu cuối To remo bị cắt trước nội dung xóa nhiều phần tử."
     },
     {
       "sample_id": "B_p116",
@@ -253,8 +237,7 @@
       "chunk_start": 312,
       "chunk_text": "10.8 Deleting elements\nThere are several ways to delete elements from a list. If you know the index of the element\nyou want, you can usepop:\n>>> t = ['a','b','c']\n>>> x = t.pop(1)\n>>> t\n['a','c']\n>>> x\n'b'\npopmodifies the list and returns the element that was removed. If you don’t provide an\nindex, it deletes and returns the last element.\nIf you don’t need the removed value, you can use thedeloperator:\n>>> t = ['a','b','c']\n>>> del t[1]\n>>> t\n['a','c']\nIf you know the element you want to remove (but not the index), you can useremove:\n>>> t = ['a','b','c']\n>>> t.remove('b')\n>>> t\n['a','c']\nThe return value fromremoveisNone.\nTo remove more than one element, you can usedelwith a slice index:\n>>> t = ['a','b','c','d','e','f']\n>>> del t[1:5]\n>>> t\n['a','f']\nAs usual, the slice selects all the elements up to but not including the second index.",
       "score": 2,
-      "reason": "Toàn bộ mục Deleting elements được giữ: có điều kiện chọn pop/del/remove, ví dụ và đầu ra, xóa bằng slice và giải thích cận cuối. Đủ ngữ cảnh để tự hiểu.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Toàn bộ mục Deleting elements được giữ: có điều kiện chọn pop/del/remove, ví dụ và đầu ra, xóa bằng slice và giải thích cận cuối. Đủ ngữ cảnh để tự hiểu."
     },
     {
       "sample_id": "C_p116",
@@ -268,8 +251,7 @@
       "chunk_start": 312,
       "chunk_text": "10.8 Deleting elements\nThere are several ways to delete elements from a list. If you know the index of the element\nyou want, you can usepop:\n>>> t = ['a','b','c']\n>>> x = t.pop(1)\n>>> t\n['a','c']\n>>> x\n'b'\npopmodifies the list and returns the element that was removed. If you don’t provide an\nindex, it deletes and returns the last element.\nIf you don’t need the removed value, you can use thedeloperator:\n>>> t = ['a','b','c']\n>>> del t[1]\n>>> t\n['a','c']\nIf you know the element you want to remove (but not the index), you can useremove:\n>>> t = ['a','b','c']\n>>> t.remove('b')\n>>> t\n['a','c']\nThe return value fromremoveisNone.\nTo remove more than one element, you can usedelwith a slice index:\n>>> t = ['a','b','c','d','e','f']\n>>> del t[1:5]\n>>> t\n['a','f']\nAs usual, the slice selects all the elements up to but not including the second index.",
       "score": 2,
-      "reason": "Toàn bộ mục Deleting elements được giữ: có điều kiện chọn pop/del/remove, ví dụ và đầu ra, xóa bằng slice và giải thích cận cuối. Đủ ngữ cảnh để tự hiểu. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Toàn bộ mục Deleting elements được giữ: có điều kiện chọn pop/del/remove, ví dụ và đầu ra, xóa bằng slice và giải thích cận cuối. Đủ ngữ cảnh để tự hiểu. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p117",
@@ -283,8 +265,7 @@
       "chunk_start": 450,
       "chunk_text": ",'the','fjords']\nAn optional argument called adelimiterspecifies which characters to use as word bound-\naries. The following example uses a hyphen as a delimiter:\n>>> s ='spam-spam-spam'\n>>> delimiter ='-'\n>>> t = s.split(delimiter)\n>>> t\n['spam','spam','spam']\njoinis the inverse ofsplit. It takes a list of strings and concatenates the elements.joinis\na string method, so you have to invoke it on the delimiter and pass the list as a parameter:\n>>> t = ['pining','for','the','fjords']\n>>> delimiter",
       "score": 1,
-      "reason": "Đầu đoạn là phần đuôi kết quả split từ chunk trước. Có ví dụ delimiter dùng dấu gạch nối, nhưng ví dụ join cuối đoạn bị cắt ở khai báo delimiter, nên chỉ hiểu một phần.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Đầu đoạn là phần đuôi kết quả split từ chunk trước. Có ví dụ delimiter dùng dấu gạch nối, nhưng ví dụ join cuối đoạn bị cắt ở khai báo delimiter, nên chỉ hiểu một phần."
     },
     {
       "sample_id": "B_p117",
@@ -298,8 +279,7 @@
       "chunk_start": 0,
       "chunk_text": "10.10. Objects and values 95\na\nb\n’banana’\na\nb\n’banana’\n’banana’\nFigure 10.2: State diagram.\nBecauselistis the name of a built-in function, you should avoid using it as a variable\nname. I also avoidlbecause it looks too much like1. So that’s why I uset.\nThelistfunction breaks a string into individual letters. If you want to break a string into\nwords, you can use thesplitmethod:\n>>> s ='pining for the fjords'\n>>> t = s.split()\n>>> t\n['pining','for','the','fjords']\nAn optional argument called adelimiterspecifies which characters to use as word bound-\naries. The following example uses a hyphen as a delimiter:\n>>> s ='spam-spam-spam'\n>>> delimiter ='-'\n>>> t = s.split(delimiter)\n>>> t\n['spam','spam','spam']\njoinis the inverse ofsplit. It takes a list of strings and concatenates the elements.joinis\na string method, so you have to invoke it on the delimiter and pass the list as a parameter:\n>>> t = ['pining','for','the','fjords']\n>>> delimiter =' '\n>>> s = delimiter.join(t)\n>>> s\n'pining for",
       "score": 1,
-      "reason": "Giữ giải thích và ví dụ split, delimiter, join nên có ngữ cảnh. Phần sơ đồ bị trải phẳng thành chữ rời và đầu ra join cuối đoạn bị cắt ở pining for, làm đoạn chưa hoàn chỉnh.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ giải thích và ví dụ split, delimiter, join nên có ngữ cảnh. Phần sơ đồ bị trải phẳng thành chữ rời và đầu ra join cuối đoạn bị cắt ở pining for, làm đoạn chưa hoàn chỉnh."
     },
     {
       "sample_id": "C_p117",
@@ -313,8 +293,7 @@
       "chunk_start": 0,
       "chunk_text": "10.10. Objects and values 95\na\nb\n’banana’\na\nb\n’banana’\n’banana’\nFigure 10.2: State diagram.\nBecauselistis the name of a built-in function, you should avoid using it as a variable\nname. I also avoidlbecause it looks too much like1. So that’s why I uset.\nThelistfunction breaks a string into individual letters. If you want to break a string into\nwords, you can use thesplitmethod:\n>>> s ='pining for the fjords'\n>>> t = s.split()\n>>> t\n['pining','for','the','fjords']\nAn optional argument called adelimiterspecifies which characters to use as word bound-\naries. The following example uses a hyphen as a delimiter:\n>>> s ='spam-spam-spam'\n>>> delimiter ='-'\n>>> t = s.split(delimiter)\n>>> t\n['spam','spam','spam']\njoinis the inverse ofsplit. It takes a list of strings and concatenates the elements.joinis\na string method, so you have to invoke it on the delimiter and pass the list as a parameter:\n>>> t = ['pining','for','the','fjords']\n>>> delimiter =' '\n>>> s = delimiter.join(t)\n>>> s\n'pining for",
       "score": 1,
-      "reason": "Giữ giải thích và ví dụ split, delimiter, join nên có ngữ cảnh. Phần sơ đồ bị trải phẳng thành chữ rời và đầu ra join cuối đoạn bị cắt ở pining for, làm đoạn chưa hoàn chỉnh. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ giải thích và ví dụ split, delimiter, join nên có ngữ cảnh. Phần sơ đồ bị trải phẳng thành chữ rời và đầu ra join cuối đoạn bị cắt ở pining for, làm đoạn chưa hoàn chỉnh. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p118",
@@ -328,8 +307,7 @@
       "chunk_start": 450,
       "chunk_text": "quivalent, because they have the same el-\nements, but notidentical, because they are not the same object. If two objects are identical,\nthey are also equivalent, but if they are equivalent, they are not necessarily identical.\nUntil now, we have been using “object” and “value” interchangeably, but it is more precise\nto say that an object has a value. If you evaluate[1, 2, 3], you get a list object whose\nvalue is a sequence of integers. If another list has the same elements, we say it has the\nsame",
       "score": 1,
-      "reason": "Bắt đầu giữa từ equivalent, thiếu hai list đang được so sánh. Phần phân biệt identity/value vẫn có thể hiểu một phần, nhưng câu cuối dừng ở same và chưa nêu hết kết luận.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu giữa từ equivalent, thiếu hai list đang được so sánh. Phần phân biệt identity/value vẫn có thể hiểu một phần, nhưng câu cuối dừng ở same và chưa nêu hết kết luận."
     },
     {
       "sample_id": "B_p118",
@@ -343,8 +321,7 @@
       "chunk_start": 0,
       "chunk_text": "96 Chapter 10. Lists\na\nb\n[ 1, 2, 3 ]\n[ 1, 2, 3 ]\nFigure 10.3: State diagram.\na\nb\n[ 1, 2, 3 ]\nFigure 10.4: State diagram.\n>>> a ='banana'\n>>> b ='banana'\n>>> a is b\nTrue\nIn this example, Python only created one string object, and bothaandbrefer to it. But\nwhen you create two lists, you get two objects:\n>>> a = [1, 2, 3]\n>>> b = [1, 2, 3]\n>>> a is b\nFalse\nSo the state diagram looks like Figure 10.3.\nIn this case we would say that the two lists areequivalent, because they have the same el-\nements, but notidentical, because they are not the same object. If two objects are identical,\nthey are also equivalent, but if they are equivalent, they are not necessarily identical.\nUntil now, we have been using “object” and “value” interchangeably, but it is more precise\nto say that an object has a value. If you evaluate[1, 2, 3], you get a list object whose\nvalue is a sequence of integers. If another list has the same elements, we say it has the\nsame value, but it is not the same object.",
       "score": 2,
-      "reason": "Giữ cả hai ví dụ identity của string/list và phần phân biệt equivalent với identical. Kết luận về cùng giá trị nhưng khác đối tượng hoàn chỉnh; chữ sơ đồ rời đầu đoạn gây nhiễu nhưng không làm mất ngữ cảnh chính.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ cả hai ví dụ identity của string/list và phần phân biệt equivalent với identical. Kết luận về cùng giá trị nhưng khác đối tượng hoàn chỉnh; chữ sơ đồ rời đầu đoạn gây nhiễu nhưng không làm mất ngữ cảnh chính."
     },
     {
       "sample_id": "C_p118",
@@ -358,8 +335,7 @@
       "chunk_start": 0,
       "chunk_text": "96 Chapter 10. Lists\na\nb\n[ 1, 2, 3 ]\n[ 1, 2, 3 ]\nFigure 10.3: State diagram.\na\nb\n[ 1, 2, 3 ]\nFigure 10.4: State diagram.\n>>> a ='banana'\n>>> b ='banana'\n>>> a is b\nTrue\nIn this example, Python only created one string object, and bothaandbrefer to it. But\nwhen you create two lists, you get two objects:\n>>> a = [1, 2, 3]\n>>> b = [1, 2, 3]\n>>> a is b\nFalse\nSo the state diagram looks like Figure 10.3.\nIn this case we would say that the two lists areequivalent, because they have the same el-\nements, but notidentical, because they are not the same object. If two objects are identical,\nthey are also equivalent, but if they are equivalent, they are not necessarily identical.\nUntil now, we have been using “object” and “value” interchangeably, but it is more precise\nto say that an object has a value. If you evaluate[1, 2, 3], you get a list object whose\nvalue is a sequence of integers. If another list has the same elements, we say it has the\nsame value, but it is not the same object.",
       "score": 2,
-      "reason": "Giữ cả hai ví dụ identity của string/list và phần phân biệt equivalent với identical. Kết luận về cùng giá trị nhưng khác đối tượng hoàn chỉnh; chữ sơ đồ rời đầu đoạn gây nhiễu nhưng không làm mất ngữ cảnh chính. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Giữ cả hai ví dụ identity của string/list và phần phân biệt equivalent với identical. Kết luận về cùng giá trị nhưng khác đối tượng hoàn chỉnh; chữ sơ đồ rời đầu đoạn gây nhiễu nhưng không làm mất ngữ cảnh chính. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p119",
@@ -373,8 +349,7 @@
       "chunk_start": 450,
       "chunk_text": " the same string or not.\n10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the l",
       "score": 1,
-      "reason": "Sau phần dư câu về string, mục List arguments có giải thích và ví dụ sửa list ở hàm. Cuối đoạn bị cắt giữa Since the l nên phần mô tả quan hệ chia sẻ đối tượng chưa hết.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Sau phần dư câu về string, mục List arguments có giải thích và ví dụ sửa list ở hàm. Cuối đoạn bị cắt giữa Since the l nên phần mô tả quan hệ chia sẻ đối tượng chưa hết."
     },
     {
       "sample_id": "B_p119",
@@ -388,8 +363,7 @@
       "chunk_start": 475,
       "chunk_text": "10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the list is shared by two frames, I drew it between them.\nIt is important to distinguish between operations that modify lists and operations that cre-\nate new lists. For example, theappendmethod modifies a list, but the+operator creates a\nnew list.\nHere’s an example usingappend:\n>>> t1 = [1, 2]\n>>> t2 = t1.append(3)\n>>> t1\n[1, 2, 3]\n>>> t2\nNone",
       "score": 2,
-      "reason": "Bắt đầu tại List arguments, có ví dụ delete_head với đầu vào/đầu ra, giải thích alias và phân biệt sửa list với tạo list mới. Ví dụ append cuối đoạn có đầy đủ kết quả None.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu tại List arguments, có ví dụ delete_head với đầu vào/đầu ra, giải thích alias và phân biệt sửa list với tạo list mới. Ví dụ append cuối đoạn có đầy đủ kết quả None."
     },
     {
       "sample_id": "C_p119",
@@ -403,8 +377,7 @@
       "chunk_start": 475,
       "chunk_text": "10.12 List arguments\nWhen you pass a list to a function, the function gets a reference to the list. If the function\nmodifies the list, the caller sees the change. For example,delete_headremoves the first\nelement from a list:\ndef delete_head(t):\ndel t[0]\nHere’s how it is used:\n>>> letters = ['a','b','c']\n>>> delete_head(letters)\n>>> letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\nSince the list is shared by two frames, I drew it between them.\nIt is important to distinguish between operations that modify lists and operations that cre-\nate new lists. For example, theappendmethod modifies a list, but the+operator creates a\nnew list.\nHere’s an example usingappend:\n>>> t1 = [1, 2]\n>>> t2 = t1.append(3)\n>>> t1\n[1, 2, 3]\n>>> t2\nNone",
       "score": 2,
-      "reason": "Bắt đầu tại List arguments, có ví dụ delete_head với đầu vào/đầu ra, giải thích alias và phân biệt sửa list với tạo list mới. Ví dụ append cuối đoạn có đầy đủ kết quả None. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Bắt đầu tại List arguments, có ví dụ delete_head với đầu vào/đầu ra, giải thích alias và phân biệt sửa list với tạo list mới. Ví dụ append cuối đoạn có đầy đủ kết quả None. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     },
     {
       "sample_id": "A_p120",
@@ -418,8 +391,7 @@
       "chunk_start": 450,
       "chunk_text": "ew list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n>>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]\nAt the beginning ofbad_delete_head,tandt4refer to the same list. At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef tail(t):\nreturn t[1:]\nThis function leaves the original list unmod",
       "score": 1,
-      "reason": "Đầu đoạn mất một phần câu giải thích tạo list mới và thiếu định nghĩa bad_delete_head ở trước. Có định nghĩa tail nhưng câu giải thích cuối bị cắt giữa unmodified, nên ngữ cảnh chưa đầy đủ.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Đầu đoạn mất một phần câu giải thích tạo list mới và thiếu định nghĩa bad_delete_head ở trước. Có định nghĩa tail nhưng câu giải thích cuối bị cắt giữa unmodified, nên ngữ cảnh chưa đầy đủ."
     },
     {
       "sample_id": "B_p120",
@@ -433,8 +405,7 @@
       "chunk_start": 0,
       "chunk_text": "98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the original list is unchanged.\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete the head of a list:\ndef bad_delete_head(t):\nt = t[1:] # WRONG!\nThe slice operator creates a new list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n>>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]\nAt the beginning ofbad_delete_head,tandt4refer to the same list. At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef tail(t):\nreturn t[1:]\nThis function leaves the original list unmodified. Here’s how it is used:\n>>> letters = ['a','",
       "score": 1,
-      "reason": "Phần bad_delete_head có định nghĩa, ví dụ và giải thích vì sao không sửa list của người gọi. Tuy nhiên ví dụ nối từ trang trước dùng t1 chưa định nghĩa tại đây và ví dụ tail cuối đoạn bị cắt giữa khai báo letters.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Phần bad_delete_head có định nghĩa, ví dụ và giải thích vì sao không sửa list của người gọi. Tuy nhiên ví dụ nối từ trang trước dùng t1 chưa định nghĩa tại đây và ví dụ tail cuối đoạn bị cắt giữa khai báo letters."
     },
     {
       "sample_id": "C_p120",
@@ -448,8 +419,7 @@
       "chunk_start": 0,
       "chunk_text": "98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the original list is unchanged.\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete the head of a list:\ndef bad_delete_head(t):\nt = t[1:] # WRONG!\nThe slice operator creates a new list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n>>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]\nAt the beginning ofbad_delete_head,tandt4refer to the same list. At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef tail(t):\nreturn t[1:]\nThis function leaves the original list unmodified. Here’s how it is used:\n>>> letters = ['a','",
       "score": 1,
-      "reason": "Phần bad_delete_head có định nghĩa, ví dụ và giải thích vì sao không sửa list của người gọi. Tuy nhiên ví dụ nối từ trang trước dùng t1 chưa định nghĩa tại đây và ví dụ tail cuối đoạn bị cắt giữa khai báo letters. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn.",
-      "assigned_reviewer": "Nguyễn Trung Duy"
+      "reason": "Phần bad_delete_head có định nghĩa, ví dụ và giải thích vì sao không sửa list của người gọi. Tuy nhiên ví dụ nối từ trang trước dùng t1 chưa định nghĩa tại đây và ví dụ tail cuối đoạn bị cắt giữa khai báo letters. C dùng đúng cùng chunk với B tại vị trí này; filter truy xuất không thay đổi coherence của đoạn."
     }
   ],
   "reviewed_at": "2026-11-13T16:02:44.526726+00:00",

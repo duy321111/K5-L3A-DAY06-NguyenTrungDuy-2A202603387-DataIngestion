@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-11-13T17:19:13.676787+00:00",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "token_limit": 256,
+  "purpose": "Preparation for a future experiment after viewing the old test. No new retrieval scores or claims of independent test evaluation.",
+  "strategies": [
+    {
+      "strategy": "A",
+      "original_chunks": 151,
+      "chunks_split": 0,
+      "token_safe_chunks": 151,
+      "maximum_tokens": 255,
+      "over_limit": 0,
+      "all_characters_preserved": true,
+      "original_sha256": "a4877ec811c8b9ca5e387e3842168d44f10f98f129dd1b566ed3cb76be856304"
+    },
+    {
+      "strategy": "B",
+      "original_chunks": 104,
+      "chunks_split": 30,
+      "token_safe_chunks": 134,
+      "maximum_tokens": 256,
+      "over_limit": 0,
+      "all_characters_preserved": true,
+      "original_sha256": "035c6addc61c46f85ed15feb7a41811b910dc5eaf4c3bc0b390ca002e3769887"
+    }
+  ]
+}

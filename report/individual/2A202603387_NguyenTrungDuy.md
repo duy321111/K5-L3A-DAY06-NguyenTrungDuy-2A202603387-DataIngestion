@@ -36,7 +36,7 @@ Không dùng OCR vì cả 36 trang đều lấy được chữ. Văn bản giữ
 ### Model, database và metadata
 
 - Embedding: `sentence-transformers/all-MiniLM-L6-v2`, chạy local, 384 chiều; document và query cùng dùng `normalize_embeddings=True`.
-- Giới hạn model ghi trong lần chạy: **256 token**. Chưa pin revision model; `resolved_model_revision` trong test_run.json là null. Đây là một giới hạn tái lập, không tự điền revision chưa xác minh.
+- Giới hạn model ghi trong lần chạy: **256 token**. Lần dev/test gốc chưa ghi revision (`resolved_model_revision` là null). Phép kiểm chứng bổ sung đã ghi snapshot và hash file model trong `starter/model_snapshot.json`, đồng thời tái tạo vector để đối chiếu; không sửa lại thông tin lịch sử của lần chạy gốc.
 - Database đang kiểm tra: PostgreSQL 16.16 (Debian 16.16-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit. pgvector: 0.8.7.
 - Metric: cosine distance, SQL dùng toán tử `<=>`, sắp xếp tăng dần và `LIMIT 3`; score hiển thị bằng `1 - distance`. Bảng hiện chỉ có khóa chính B-tree, chưa có HNSW/IVFFlat nên truy xuất là exact search.
 - Driver kết nối: pg8000. Chroma và psycopg từng bị Windows chặn DLL; pipeline thực tế dùng PostgreSQL trong Docker và pg8000 viết bằng Python.
@@ -99,7 +99,7 @@ Coherence dùng cùng 10 trang đầu theo thứ tự 111–120. Trên mỗi tra
 
 Metadata và grounding dùng cùng 5 câu test cho A/B/C. Mỗi cấu hình kiểm tra 15 bản ghi top-3 về nguồn/trang/chương, đối chiếu PDF. Grounding chấm chung ba kết quả: 0 = không có bằng chứng, 1 = có nhưng chưa đủ, 2 = đủ trả lời và truy nguồn. Đây là chất lượng bằng chứng truy xuất, không phải độ chính xác câu trả lời LLM.
 
-Nhãn và lý do được lưu tại [test_audit.json](../../starter/results/test_audit.json), bản đọc tại test_review.md. Không suy điểm coherence/grounding trực tiếp từ Hit@3. Các đánh giá chưa có kiểm chứng độc lập giữa nhiều người, có nguy cơ thiên lệch; không dùng tên học viên được giao rà soát làm bằng chứng rằng học viên đã tự chấm.
+Nhãn và lý do được lưu tại [test_audit.json](../../starter/results/test_audit.json), bản đọc tại test_review.md. Không suy điểm coherence/grounding trực tiếp từ Hit@3. Các đánh giá chưa có kiểm chứng độc lập giữa nhiều người nên có nguy cơ thiên lệch.
 
 | Cấu hình | Coherence /2 (10 mẫu) | Metadata đúng | Top-3 đúng chương ở câu filter | Grounding 0/1/2 | Grounding /2 (5 câu) |
 |---|---:|---:|---:|---|---:|
@@ -136,13 +136,59 @@ Thời gian tạo query embedding chung cho 15 câu dev là 0.138 giây; cho 5 c
 
 Thời gian tìm kiếm trong bảng kết quả gồm mở kết nối PostgreSQL, truy vấn đếm và truy vấn top-3; không gồm tải model và tạo embedding. Chỉ có một lượt chạy tuần tự A → B → C, nên cache, thứ tự chạy và mở kết nối có thể ảnh hưởng. Không kết luận C nhanh hơn chỉ từ các số trung bình này.
 
-Phí gọi API embedding là 0 USD vì model chạy local. Chưa đo chi phí điện/phần cứng. Thời gian đọc PDF, tạo document embedding, ingest và RAM cực đại không được thu ở lần chạy ban đầu, nên báo cáo không tự tạo số liệu cho các mục đó. Thống kê kiểm chứng ở [resource_summary.json](../../starter/results/resource_summary.json).
+Phí gọi API embedding là 0 USD vì model chạy local. Chưa đo chi phí điện/phần cứng. Thời gian đọc PDF, tạo document embedding và ingest không được thu ở lần chạy ban đầu; chúng đã được đo ở một lượt kiểm chứng bổ sung riêng, trình bày dưới đây. RAM cực đại vẫn chưa đo. Không coi các thời gian bổ sung là thời gian của lần chạy dev/test gốc. Thống kê ban đầu ở [resource_summary.json](../../starter/results/resource_summary.json).
 
 ### Giới hạn token được phát hiện khi lập báo cáo
 
 Model dùng giới hạn 256 token. A có 0/151 chunk vượt giới hạn, token lớn nhất 255. B/C có **30/104 chunk vượt giới hạn**, token lớn nhất 384.
 
 Đây là hạn chế quan trọng: model.encode cắt phần vượt giới hạn trước khi tạo embedding, dù text đầy đủ vẫn được lưu để hiển thị và chấm evidence. Vì vậy thông tin ở cuối chunk B/C có thể không tham gia xếp hạng. Không thể quy mọi chênh lệch A–B cho ranh giới tiêu đề. Kiểm tra token được thực hiện sau test; không sửa chunk và chạy lại test để trình bày như holdout mới.
+
+### Kiểm thử và thời gian đo bổ sung
+
+Bộ kiểm chứng chạy đúng script đọc/chia đoạn trong thư mục tạm và đúng loader trong schema PostgreSQL riêng. Sau phép đo, schema thử được xóa; SHA-256 của database production và các artifact dev/test không đổi. Không tạo thêm điểm retrieval hoặc thay lựa chọn B.
+
+| Giai đoạn bổ sung | Thời gian (giây) | Phạm vi |
+|---|---:|---|
+| read_pdf.py | 1.0750 | Chạy script gốc trong thư mục tạm; gồm khởi động Python và ghi JSON. |
+| chunk_pages.py | 0.0806 | Chạy cách A; gồm khởi động Python và ghi JSON. |
+| chunk_sections.py | 0.0867 | Chạy cách B; gồm khởi động Python và ghi JSON. |
+| cached_model_load_seconds | 1.7246 | Nạp snapshot model từ cache; không phải tải mới từ Internet. |
+| document_embedding_A | 5.6764 | Tái tạo 151 vector A trên CPU, cùng cách chuẩn hóa. |
+| document_embedding_B | 4.6433 | Tái tạo 104 vector B trên CPU, giữ cách cắt token của baseline. |
+| first_ingestion | 2.9546 | 255 vector thật, bảng thử trống; gồm kiểm tra input, kết nối, upsert và commit. |
+| repeat_ingestion | 2.8546 | Nạp lại cùng 255 vector; số dòng và nội dung không đổi. |
+
+Đây là một lần đo bổ sung với cache sẵn có, chưa phải benchmark thời gian nhiều lần có kiểm soát. Không dùng các số này để khẳng định một chiến lược nhanh hơn tổng quát.
+
+**22 kiểm tra đã đạt**, gồm:
+
+- Kết quả đọc PDF/chia A/chia B tái tạo khớp JSON gốc.
+- Vector được tạo lại từ revision cố định khớp vector đã lưu theo dung sai tuyệt đối 1e-5.
+- Từ chối vector sai chiều, ID trùng, chương sai và text rỗng trước khi ghi database.
+- Nạp lần đầu và nạp lặp đều giữ 151 dòng A, 104 dòng B.
+- Tài liệu thử thay đổi: text và vector được cập nhật; chunk B đã bỏ không còn trong database thử; A giữ nguyên.
+- Cố ý gây lỗi chiều vector trong transaction: toàn bộ lần nạp được rollback, không lưu dở dữ liệu.
+- Vector thật tự tìm lại có cosine distance gần 0; filter chapter=12 giữ toàn bộ top-3 trong chương 12.
+- C không có filter trả kết quả giống B; database gốc và dev/test giữ nguyên.
+
+Snapshot đã kiểm tra: `sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41`. Hash từng file nằm trong [model_snapshot.json](../../starter/model_snapshot.json). Mức khớp số học của A/B được ghi trong artifact kiểm chứng; không khẳng định hai lần chạy bit-for-bit giống nhau.
+
+Chi tiết: [supplementary_verification.json](../../starter/results/supplementary_verification.json) và [bản đọc](../../starter/results/supplementary_verification.md).
+
+- Vector A: sai khác tuyệt đối lớn nhất so với file cũ là 0.
+- Vector B: sai khác tuyệt đối lớn nhất so với file cũ là 0.
+
+### Bản chia theo token dành cho thí nghiệm tiếp theo
+
+Đã bổ sung `starter/build_token_safe_chunks.py`: dùng tokenizer cùng revision, ưu tiên cắt ở khoảng trắng và kiểm tra lại số token trước khi xuất. Ghép các phần con theo thứ tự sẽ khôi phục đúng toàn bộ chuỗi ký tự của chunk cha.
+
+| Bộ chunk chuẩn bị mới | Chunk gốc | Chunk sau chia | Vượt 256 token |
+|---|---:|---:|---:|
+| A | 151 | 151 | 0 |
+| B | 104 | 134 | 0 |
+
+Đầu ra lưu riêng ở [starter/results/token_safe/](../../starter/results/token_safe/). Bộ mới chưa có embedding hoặc kết quả truy xuất. Bảng điểm cũ vẫn thuộc baseline 151/104 chunk. Vì đã xem test gốc, mọi đánh giá chiến lược mới cần test khác hoặc công bố rõ là thí nghiệm sau holdout; không lấy điểm test cũ làm điểm cho bộ mới.
 
 ### Ví dụ thất bại
 

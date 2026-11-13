@@ -134,5 +134,7 @@
       ]
     }
   ],
-  "token_check_note": "Lengths inspected after test without changing stored embeddings. Existing model.encode uses truncation at model.max_seq_length."
+  "token_check_note": "Lengths inspected after test without changing stored embeddings. Existing model.encode uses truncation at model.max_seq_length.",
+  "supplementary_profile": "starter/results/supplementary_verification.json",
+  "measurement_scope_note": "unmeasured lists stages missing from the original run. Extraction, document embedding and ingestion were subsequently profiled separately; RAM/electricity/hardware cost remain unmeasured."
 }

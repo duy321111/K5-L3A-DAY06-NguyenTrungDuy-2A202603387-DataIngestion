@@ -1,0 +1,222 @@
+{
+  "measured_at": "2026-11-13T17:19:39.060449+00:00",
+  "scope": "Supplementary profiling/verification after holdout evaluation; original dev/test unchanged.",
+  "baseline_hashes_before": {
+    "selection.json": "c4362aebbeb6875a2fe20b1040b67319ed7bb981272d1f0b88ec1d22c59fbe2f",
+    "dev_metrics.json": "4dc46c1f2a6f9e91ac8a8ae8ed98ecaf92e825bd30d4c04d9a21e230974e2333",
+    "dev_traces.json": "c1a7f28799e20115606293439b454349d530367e05d2835d43599d506d3e7680",
+    "dev_run.json": "088ae3b16a2453545c1eb28fc46a8f86396d88b53ce29c9ddf3fcbf942e90822",
+    "test_metrics.json": "ce1c7d2404916c9f43ddbf2a0948fbf4a220a66f43f1702aa4b09433de3f2cb9",
+    "test_traces.json": "519d026d70d7eee92d614a30d65db7b02f3b7e91beccb7e9718ecf9e94857733",
+    "test_run.json": "cb912be8c4739a08aa4bc0a8c82fdf4fbf695a30b1fc13193c30a1d236ed7941"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "pypdf": "7.0.1",
+    "fonttools": "4.68.0",
+    "sentence-transformers": "6.3.0",
+    "torch": "2.15.0",
+    "transformers": "5.22.2",
+    "pg8000": "1.31.6"
+  },
+  "source_scripts_sha256": {
+    "read_pdf.py": "56a0459c6197df76e48fca1b06348b0286c593b58dc8092e2cdad9b6d4a147b5",
+    "chunk_pages.py": "61088b1e3490c0145f0b6d837e7e9e8068a65d22c7f23ce9b4dd928585627318",
+    "chunk_sections.py": "0092da04b664640f9e00a6426776489f1db27b3ed49f21ea38d48e91ffbcaec8",
+    "load_database.py": "26e56c2c5243809008125b29b31d3a114988eeed8b8a0f173133693c8894cf85",
+    "search.py": "38e15e774a2cb6b762b4b1e11cbd42f66a84b36904aa0e43db2a7f1325f4f9ca",
+    "embed_chunks.py": "aa180729c7db4164b4dcea1bf9ff8e67dfe6411cf9097892edb059f07001cc4d"
+  },
+  "checks": [
+    {
+      "name": "read_pdf.py completes",
+      "passed": true,
+      "detail": "Script completed"
+    },
+    {
+      "name": "read_pdf.py matches baseline",
+      "passed": true,
+      "detail": "Generated JSON equals the original artifact"
+    },
+    {
+      "name": "chunk_pages.py completes",
+      "passed": true,
+      "detail": "Script completed"
+    },
+    {
+      "name": "chunk_pages.py matches baseline",
+      "passed": true,
+      "detail": "Generated JSON equals the original artifact"
+    },
+    {
+      "name": "chunk_sections.py completes",
+      "passed": true,
+      "detail": "Script completed"
+    },
+    {
+      "name": "chunk_sections.py matches baseline",
+      "passed": true,
+      "detail": "Generated JSON equals the original artifact"
+    },
+    {
+      "name": "A pinned model agrees with stored vectors",
+      "passed": true,
+      "detail": "Maximum absolute difference 0; tolerance 1e-5"
+    },
+    {
+      "name": "B pinned model agrees with stored vectors",
+      "passed": true,
+      "detail": "Maximum absolute difference 0; tolerance 1e-5"
+    },
+    {
+      "name": "reject wrong vector dimensions",
+      "passed": true,
+      "detail": "Invalid input rejected before database writes"
+    },
+    {
+      "name": "reject duplicate IDs",
+      "passed": true,
+      "detail": "Invalid input rejected before database writes"
+    },
+    {
+      "name": "reject wrong chapter",
+      "passed": true,
+      "detail": "Invalid input rejected before database writes"
+    },
+    {
+      "name": "reject empty document text",
+      "passed": true,
+      "detail": "Invalid input rejected before database writes"
+    },
+    {
+      "name": "first_ingestion counts",
+      "passed": true,
+      "detail": "[['A', 151], ['B', 104]]"
+    },
+    {
+      "name": "repeat_ingestion counts",
+      "passed": true,
+      "detail": "[['A', 151], ['B', 104]]"
+    },
+    {
+      "name": "repeat ingestion content unchanged",
+      "passed": true,
+      "detail": "All IDs, metadata, text and vectors equal original 255-row snapshot after two loads"
+    },
+    {
+      "name": "updated document replaces text/vector and prunes obsolete chunks",
+      "passed": true,
+      "detail": "B has 103 rows, changed text and newly encoded vector updated, deleted ID absent; A unchanged"
+    },
+    {
+      "name": "SQL failure rolls back complete transaction",
+      "passed": true,
+      "detail": "Deliberately invalid vector caused database error; previous A/B content unchanged"
+    },
+    {
+      "name": "cosine self match",
+      "passed": true,
+      "detail": "Known real document vector has top distance near zero"
+    },
+    {
+      "name": "SQL chapter filter",
+      "passed": true,
+      "detail": "All C results satisfy chapter=12 even for a query vector from chapter 10"
+    },
+    {
+      "name": "C without filter equals B",
+      "passed": true,
+      "detail": "Identical top-3 IDs, scores and metadata"
+    },
+    {
+      "name": "production database unchanged",
+      "passed": true,
+      "detail": "Hash of public.chunks unchanged"
+    },
+    {
+      "name": "frozen dev/test unchanged",
+      "passed": true,
+      "detail": "Original selection, metrics, traces, model inputs and code hashes unchanged"
+    }
+  ],
+  "timings": {
+    "read_pdf.py": {
+      "seconds": 1.0749652000013157,
+      "stdout": "Tổng số trang: 244\n\n--- Trang 111 ---\nChapter 10\nLists\nThis chapter presents one of Python’s most useful built-in types, lists. You will also learn\nmore about objects and what can happen when you have more than one name for the same\nobjec\n\n--- Trang 112 ---\n90 Chapter 10. Lists\n0\n1\nlist\nnumbers\n123\n5\nlist\nempty\n0\n1\n2\n’Cheddar’\n’Edam’\n’Gouda’\nlist\ncheeses\n42\nFigure 10.1: State diagram.\n10.2 Lists are mutable\nThe syntax for accessing the elements of a list\n\n--- Trang 113 ---\n10.3. Traversing a list 91\n10.3 Traversing a list\nThe most common way to traverse the elements of a list is with aforloop. The syntax is\nthe same as for strings:\nfor cheese in cheeses:\nprint(cheese)\nT\n\n--- Trang 114 ---\n92 Chapter 10. Lists\n>>> t = ['a','b','c','d','e','f']\n>>> t[1:3]\n['b','c']\n>>> t[:4]\n['a','b','c','d']\n>>> t[3:]\n['d','e','f']\nIf you omit the first index, the slice starts at the beginning. If you o\n\n--- Trang 115 ---\n10.7. Map, filter and reduce 93\n10.7 Map, filter and reduce\nTo add up all the numbers in a list, you can use a loop like this:\ndef add_all(t):\ntotal = 0\nfor x in t:\ntotal += x\nreturn total\ntotalis ini\n\n--- Trang 116 ---\n94 Chapter 10. Lists\nisupperis a string method that returnsTrueif the string contains only upper case letters.\nAn operation likeonly_upperis called afilterbecause it selects some of the elements and\nf\n\n--- Trang 117 ---\n10.10. Objects and values 95\na\nb\n’banana’\na\nb\n’banana’\n’banana’\nFigure 10.2: State diagram.\nBecauselistis the name of a built-in function, you should avoid using it as a variable\nname. I also avoidlbe\n\n--- Trang 118 ---\n96 Chapter 10. Lists\na\nb\n[ 1, 2, 3 ]\n[ 1, 2, 3 ]\nFigure 10.3: State diagram.\na\nb\n[ 1, 2, 3 ]\nFigure 10.4: State diagram.\n>>> a ='banana'\n>>> b ='banana'\n>>> a is b\nTrue\nIn this example, Python only cr\n\n--- Trang 119 ---\n10.12. List arguments 97\n0\n1\n2\n’a’\n’b’\n’c’\nlist\nt\nletters\ndelete_head\n__main__\nFigure 10.5: Stack diagram.\n>>> b[0] = 42\n>>> a\n[42, 2, 3]\nAlthough this behavior can be useful, it is error-prone. In ge\n\n--- Trang 120 ---\n98 Chapter 10. Lists\nThe return value fromappendisNone.\nHere’s an example using the+operator:\n>>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]\nThe result of the operator is a new list, and the o\n\n--- Trang 121 ---\n10.13. Debugging 99\nt = t.sort() # WRONG!\nBecausesortreturnsNone, the next operation you perform withtis likely to fail.\nBefore using list methods and operators, you should read the documentation care\n\n--- Trang 122 ---\n100 Chapter 10. Lists\n10.14 Glossary\nlist:A sequence of values.\nelement:One of the values in a list (or other sequence), also called items.\nnested list:A list that is an element of another list.\naccum\n\n--- Trang 123 ---\n10.15. Exercises 101\nExercise 10.4.Write a function calledchopthat takes a list, modifies it by removing the first and\nlast elements, and returnsNone. For example:\n>>> t = [1, 2, 3, 4]\n>>> chop(t)\n>>>\n\n--- Trang 124 ---\n102 Chapter 10. Lists\nthinkpython. com/ code/ interlock. py. Credit: This exercise is inspired by an example at\nhttp: // puzzlers. org.\n1. Write a program that finds all pairs of words that interlock.\n\n--- Trang 125 ---\nChapter 11\nDictionaries\nThis chapter presents another built-in type called a dictionary. Dictionaries are one of\nPython’s best features; they are the building blocks of many efficient and elegant algo\n\n--- Trang 126 ---\n104 Chapter 11. Dictionaries\n>>> eng2sp = {'one':'uno','two':'dos','three':'tres'}\nBut if you printeng2sp, you might be surprised:\n>>> eng2sp\n{'one':'uno','three':'tres','two':'dos'}\nThe order of the \n\n--- Trang 127 ---\n11.2. Dictionary as a collection of counters 105\n1. You could create 26 variables, one for each letter of the alphabet. Then you could tra-\nverse the string and, for each character, increment the corr\n\n--- Trang 128 ---\n106 Chapter 11. Dictionaries\n1\n>>> h.get('c', 0)\n0\nAs an exercise, usegetto writehistogrammore concisely. You should be able to eliminate\ntheifstatement.\n11.3 Looping and dictionaries\nIf you use a dic\n\n--- Trang 129 ---\n11.5. Dictionaries and lists 107\nThis function is yet another example of the search pattern, but it uses a feature we haven’t\nseen before,raise. Theraise statementcauses an exception; in this case it \n\n--- Trang 130 ---\n108 Chapter 11. Dictionaries\n’a’ 1\n1\ndict\nhist\n’p’\n1\n’o’ 1\n’r’ 2\n’t’\n0\n1\n’a’\n’p’\nlist\n2 ’t’\n’o’3\n1\ndict\ninv\n2 0\nlist\n’r’\nFigure 11.1: State diagram.\nEach time through the loop,keygets a key fromdandva\n\n--- Trang 131 ---\n11.6. Memos 109\nfibonacci\nn 4\nfibonacci\nn 3\nfibonacci\nn 2\nfibonacci\nn 0\nfibonacci\nn 1\nfibonacci\nn 1\nfibonacci\nn 2\nfibonacci\nn 0\nfibonacci\nn 1\nFigure 11.2: Call graph.\nSince dictionaries are mutable, t\n\n--- Trang 132 ---\n110 Chapter 11. Dictionaries\nWheneverfibonacciis called, it checksknown. If the result is already there, it can return\nimmediately. Otherwise it has to compute the new value, add it to the dictionary,\n\n--- Trang 133 ---\n11.8. Debugging 111\nUnboundLocalError: local variable'count'referenced before assignment\nPython assumes thatcountis local, and under that assumption you are reading it before\nwriting it. The solution,\n\n--- Trang 134 ---\n112 Chapter 11. Dictionaries\nFormat the output:Formatting debugging output can make it easier to spot an error. We\nsaw an example in Section 6.9. Another tool you might find useful is thepprintmod-\nul\n\n--- Trang 135 ---\n11.10. Exercises 113\n11.10 Exercises\nExercise 11.1.Write a function that reads the words inwords.txtand stores them as keys in a\ndictionary. It doesn’t matter what the values are. Then you can use the\n\n--- Trang 136 ---\n114 Chapter 11. Dictionaries\nWrite a program that lists all the words that solve the Puzzler. Solution:https: // thinkpython.\ncom/ code/ homophone. py.\n\n--- Trang 137 ---\nChapter 12\nT uples\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together. I also present a useful feature for variable-length argu\n\n--- Trang 138 ---\n116 Chapter 12. T uples\nIf the argument is a sequence (string, list or tuple), the result is a tuple with the elements of\nthe sequence:\n>>> t = tuple('lupins')\n>>> t\n('l','u','p','i','n','s')\nBecauset\n\n--- Trang 139 ---\n12.3. T uples as return values 117\nThe left side is a tuple of variables; the right side is a tuple of expressions. Each value\nis assigned to its respective variable. All the expressions on the right \n\n--- Trang 140 ---\n118 Chapter 12. T uples\n12.4 Variable-length argument tuples\nFunctions can take a variable number of arguments. A parameter name that begins with\n*gathersarguments into a tuple. For example,printallta\n\n--- Trang 141 ---\n12.5. Lists and tuples 119\n>>> for pair in zip(s, t):\n... print(pair)\n...\n('a', 0)\n('b', 1)\n('c', 2)\nA zip object is a kind ofiterator, which is any object that iterates through a sequence.\nIterators \n\n--- Trang 142 ---\n120 Chapter 12. T uples\n12.6 Dictionaries and tuples\nDictionaries have a method calleditemsthat returns a sequence of tuples, where each\ntuple is a key-value pair.\n>>> d = {'a':0,'b':1,'c':2}\n>>> t = \n\n--- Trang 143 ---\n12.7. Sequences of sequences 121\n0\n1\n’Cleese’\n’John’\ntuple\nFigure 12.1: State diagram.\n(’Cleese’, ’John’) ’08700 100 222’\n’08700 100 222’\n’08700 100 222’\n’08700 100 222’\n’08700 100 222’\n(’Chapman’, ’G\n\n--- Trang 144 ---\n122 Chapter 12. T uples\n12.8 Debugging\nLists, dictionaries and tuples are examples ofdata structures; in this chapter we are starting\nto see compound data structures, like lists of tuples, or dictiona\n\n--- Trang 145 ---\n12.10. Exercises 123\ngather:An operation that collects multiple arguments into a tuple.\nscatter:An operation that makes a sequence behave like multiple arguments.\nzip object:The result of calling a bu\n\n--- Trang 146 ---\n124 Chapter 12. T uples\nExercise 12.4.Here’s another Car Talk Puzzler (http: // www. cartalk. com/ content/\npuzzlers):\nWhat is the longest English word, that remains a valid English word, as you remov\nĐã lưu 36 trang vào C:\\Users\\Duy\\AppData\\Local\\Temp\\day06_verify_gos3dgf6\\data\\pages.json\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    "chunk_pages.py": {
+      "seconds": 0.08060079999995651,
+      "stdout": "Số dòng trống ở trang 111: 0\nĐã tạo 151 đoạn.\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    "chunk_sections.py": {
+      "seconds": 0.08666310000262456,
+      "stdout": "Đã tạo 104 đoạn cho cấu hình B.\nĐộ dài đoạn lớn nhất: 1000\nSố đoạn rỗng: 0\nSố trang có chunk: 36\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    "cached_model_load_seconds": 1.7245686000023852,
+    "document_embedding_A": {
+      "seconds": 5.676448300000629,
+      "chunks": 151,
+      "tokens_before_truncation": 19292,
+      "over_limit": 0,
+      "max_absolute_difference_from_original": 0.0,
+      "note": "Reproduces the existing truncation behavior; not a corrected retrieval experiment."
+    },
+    "document_embedding_B": {
+      "seconds": 4.643274800000654,
+      "chunks": 104,
+      "tokens_before_truncation": 17533,
+      "over_limit": 30,
+      "max_absolute_difference_from_original": 0.0,
+      "note": "Reproduces the existing truncation behavior; not a corrected retrieval experiment."
+    },
+    "first_ingestion": {
+      "seconds": 2.9545542000014393,
+      "scope": "Same loader and real 255 vectors; isolated table; includes validation, connection, upsert, prune and commit"
+    },
+    "repeat_ingestion": {
+      "seconds": 2.8546425999993517,
+      "scope": "Same loader and real 255 vectors; isolated table; includes validation, connection, upsert, prune and commit"
+    }
+  },
+  "timing_limits": "One supplementary warm-cache CPU run; subprocess startup included in extraction/chunk timings. Model load, document encode and DB ingest measured separately. No peak RAM, electricity or hardware cost measured.",
+  "api_cost_usd": 0,
+  "model_snapshot": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "files_sha256": {
+      "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+      "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+      "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+      "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "recorded_at": "2026-11-13T17:19:39.060449+00:00",
+    "historical_note": "Snapshot inspected after test; original dev/test run did not record a revision. Re-encoding below tests numerical agreement with stored document vectors.",
+    "max_seq_length": 256,
+    "dimensions": 384
+  },
+  "database_sha256_before": "66d9a903e0dd2cb16813792d812d0d0b92c33808ddf0f9ec687602cfd2e09bc9",
+  "database_sha256_after": "66d9a903e0dd2cb16813792d812d0d0b92c33808ddf0f9ec687602cfd2e09bc9",
+  "baseline_hashes_after": {
+    "selection.json": "c4362aebbeb6875a2fe20b1040b67319ed7bb981272d1f0b88ec1d22c59fbe2f",
+    "dev_metrics.json": "4dc46c1f2a6f9e91ac8a8ae8ed98ecaf92e825bd30d4c04d9a21e230974e2333",
+    "dev_traces.json": "c1a7f28799e20115606293439b454349d530367e05d2835d43599d506d3e7680",
+    "dev_run.json": "088ae3b16a2453545c1eb28fc46a8f86396d88b53ce29c9ddf3fcbf942e90822",
+    "test_metrics.json": "ce1c7d2404916c9f43ddbf2a0948fbf4a220a66f43f1702aa4b09433de3f2cb9",
+    "test_traces.json": "519d026d70d7eee92d614a30d65db7b02f3b7e91beccb7e9718ecf9e94857733",
+    "test_run.json": "cb912be8c4739a08aa4bc0a8c82fdf4fbf695a30b1fc13193c30a1d236ed7941"
+  },
+  "passed": true
+}
